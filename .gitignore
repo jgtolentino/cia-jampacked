@@ -99,3 +99,11 @@ $RECYCLE.BIN/
 *.tar.gz
 *.rar
 *.7z
+
+# Security
+.secrets.baseline
+*.key
+*.pem
+*.p12
+*.jks
+secrets/

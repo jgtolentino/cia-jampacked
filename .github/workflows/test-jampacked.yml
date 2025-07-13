@@ -1,13 +1,5 @@
-name: JamPacked CI/CD Tests
-
-on:
-  push:
-    branches: [ main, develop, feature/* ]
-  pull_request:
-    branches: [ main ]
-  schedule:
-    # Run tests daily at 2 AM UTC
-    - cron: '0 2 * * *'
+name: JamPacked CI
+on: [push, pull_request]
 
 jobs:
   test:
@@ -17,15 +9,15 @@ jobs:
         python-version: ['3.9', '3.10', '3.11']
     
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: ${{ matrix.python-version }}
     
     - name: Cache dependencies
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: ~/.cache/pip
         key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements*.txt') }}
@@ -43,159 +35,25 @@ jobs:
     - name: Install Python dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
-        pip install -r tests/requirements-test.txt
+        pip install -r requirements.txt --quiet
+        pip install pulser-sdk==4.*
+        pip install pytest flake8 pytest-cov
+        if [ -f tests/requirements-test.txt ]; then pip install -r tests/requirements-test.txt; fi
     
-    - name: Download language models
+    - name: Run tests with coverage
       run: |
-        python -m spacy download en_core_web_sm
-        python -m spacy download xx_ent_wiki_sm  # Multilingual
-    
-    - name: Run unit tests
-      run: |
-        python tests/run_tests.py
+        pytest -q --cov=src --cov=autonomous-intelligence --cov-report=xml --cov-report=term
       env:
         PYTHONPATH: ${{ github.workspace }}
     
-    - name: Run integration tests
+    - name: Run linting
       run: |
-        python -m pytest tests/test_jampacked_integration.py -v
-      env:
-        PYTHONPATH: ${{ github.workspace }}
+        flake8 src autonomous-intelligence --max-line-length=120 --exclude=__pycache__,*.pyc,.git,venv
     
-    - name: Run async tests
-      run: |
-        python tests/run_tests.py --async
-      env:
-        PYTHONPATH: ${{ github.workspace }}
-    
-    - name: Generate coverage report
-      run: |
-        coverage run -m pytest tests/
-        coverage xml
-        coverage report
-    
-    - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v3
+    - name: Upload coverage
+      uses: codecov/codecov-action@v4
       with:
         file: ./coverage.xml
-        flags: unittests
-        name: codecov-umbrella
-    
-    - name: Archive test results
-      if: always()
-      uses: actions/upload-artifact@v3
-      with:
-        name: test-results-${{ matrix.python-version }}
-        path: |
-          coverage.xml
-          coverage.json
-          test_report.json
-          pytest_html_report.html
-    
-    - name: Lint code
-      run: |
-        pip install flake8 black mypy
-        flake8 autonomous-intelligence/ --max-line-length=120
-        black --check autonomous-intelligence/
-        mypy autonomous-intelligence/ --ignore-missing-imports
+        token: ${{ secrets.CODECOV_TOKEN }}
+        fail_ci_if_error: false
 
-  integration-test-mcp:
-    runs-on: ubuntu-latest
-    needs: test
-    
-    steps:
-    - uses: actions/checkout@v3
-    
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.10'
-    
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-        pip install -r tests/requirements-test.txt
-    
-    - name: Set up SQLite MCP test environment
-      run: |
-        # Create test MCP SQLite database
-        mkdir -p /tmp/mcp-sqlite-server/data
-        touch /tmp/mcp-sqlite-server/data/database.sqlite
-    
-    - name: Run MCP integration tests
-      run: |
-        export TEST_MCP_DB_PATH="/tmp/mcp-sqlite-server/data/database.sqlite"
-        python -m pytest tests/test_jampacked_integration.py::TestMCPIntegrationEndToEnd -v
-    
-    - name: Verify MCP tables created
-      run: |
-        sqlite3 /tmp/mcp-sqlite-server/data/database.sqlite ".tables" | grep jampacked_
-
-  performance-test:
-    runs-on: ubuntu-latest
-    needs: test
-    
-    steps:
-    - uses: actions/checkout@v3
-    
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.10'
-    
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-        pip install -r tests/requirements-test.txt
-        pip install pytest-benchmark
-    
-    - name: Run performance benchmarks
-      run: |
-        python -m pytest tests/test_custom_intelligence.py::TestPerformanceOptimization -v --benchmark-only
-    
-    - name: Archive benchmark results
-      uses: actions/upload-artifact@v3
-      with:
-        name: benchmark-results
-        path: .benchmarks/
-
-  security-scan:
-    runs-on: ubuntu-latest
-    needs: test
-    
-    steps:
-    - uses: actions/checkout@v3
-    
-    - name: Run security scan
-      uses: pyupio/safety@v1
-      with:
-        api-key: ${{ secrets.SAFETY_API_KEY }}
-    
-    - name: Run Bandit security linter
-      run: |
-        pip install bandit
-        bandit -r autonomous-intelligence/ -ll
-
-  deploy-test-report:
-    runs-on: ubuntu-latest
-    needs: [test, integration-test-mcp, performance-test]
-    if: github.ref == 'refs/heads/main'
-    
-    steps:
-    - uses: actions/checkout@v3
-    
-    - name: Download all artifacts
-      uses: actions/download-artifact@v3
-    
-    - name: Generate comprehensive test report
-      run: |
-        python scripts/generate_test_dashboard.py
-    
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./test-reports

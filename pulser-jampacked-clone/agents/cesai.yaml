@@ -1,0 +1,200 @@
+name: cesai
+version: "1.0.0"
+description: Creative Effectiveness Scoring AI - Core analytics engine
+category: scoring
+status: production
+backend: claude-3-opus
+
+capabilities:
+  - creative_effectiveness_scoring
+  - performance_prediction
+  - optimization_recommendations
+  - award_likelihood_assessment
+  - benchmark_analysis
+
+actions:
+  score_effectiveness:
+    description: Score creative assets on multiple effectiveness dimensions
+    inputs:
+      creative_data:
+        type: object
+        required: true
+      context:
+        type: object
+        required: true
+      similar_creatives:
+        type: array
+        required: false
+      scoring_dimensions:
+        type: array
+        required: true
+    outputs:
+      score:
+        type: number
+        range: [0, 100]
+      features:
+        type: object
+      confidence:
+        type: number
+    
+  forecast_metrics:
+    description: Predict performance metrics based on effectiveness score
+    inputs:
+      effectiveness_score:
+        type: number
+        required: true
+      target_metrics:
+        type: array
+        required: true
+      industry_benchmarks:
+        type: boolean
+        default: true
+    outputs:
+      predictions:
+        type: object
+      gaps:
+        type: object
+      confidence_intervals:
+        type: object
+    
+  suggest_improvements:
+    description: Generate optimization recommendations
+    inputs:
+      current_score:
+        type: number
+        required: true
+      gap_analysis:
+        type: object
+        required: true
+      optimization_priority:
+        type: string
+        required: true
+    outputs:
+      recommendations:
+        type: array
+      priority_matrix:
+        type: object
+      expected_impact:
+        type: object
+    
+  predict_awards:
+    description: Predict award show performance
+    inputs:
+      effectiveness_score:
+        type: number
+        required: true
+      creative_features:
+        type: object
+        required: true
+      award_shows:
+        type: array
+        required: true
+    outputs:
+      predictions:
+        type: object
+      confidence:
+        type: number
+      similar_winners:
+        type: array
+
+scoring_framework:
+  dimensions:
+    visual_complexity:
+      weight: 0.15
+      factors:
+        - composition_balance
+        - color_harmony
+        - visual_hierarchy
+        - production_quality
+    
+    message_clarity:
+      weight: 0.20
+      factors:
+        - core_message_prominence
+        - call_to_action_clarity
+        - benefit_communication
+        - brand_integration
+    
+    brand_prominence:
+      weight: 0.15
+      factors:
+        - logo_visibility
+        - brand_color_usage
+        - distinctive_assets
+        - category_cues
+    
+    emotional_resonance:
+      weight: 0.25
+      factors:
+        - emotional_intensity
+        - relevance_to_audience
+        - storytelling_quality
+        - authenticity
+    
+    cultural_relevance:
+      weight: 0.10
+      factors:
+        - local_insights
+        - cultural_sensitivity
+        - trend_alignment
+        - social_consciousness
+    
+    innovation_level:
+      weight: 0.15
+      factors:
+        - creative_uniqueness
+        - execution_novelty
+        - technology_integration
+        - category_disruption
+
+performance_models:
+  awareness_lift:
+    baseline: 0.05
+    multipliers:
+      high_effectiveness: 3.5
+      medium_effectiveness: 2.0
+      low_effectiveness: 1.2
+    
+  engagement_rate:
+    baseline: 0.02
+    factors:
+      - emotional_resonance: 0.4
+      - visual_complexity: 0.3
+      - message_clarity: 0.3
+    
+  conversion_rate:
+    baseline: 0.01
+    factors:
+      - message_clarity: 0.4
+      - brand_prominence: 0.3
+      - call_to_action: 0.3
+
+award_prediction_model:
+  cannes_lions:
+    threshold_score: 75
+    category_weights:
+      film: visual_complexity * 0.3 + emotional_resonance * 0.4
+      print: visual_complexity * 0.4 + message_clarity * 0.3
+      digital: innovation_level * 0.4 + cultural_relevance * 0.3
+    
+  effie_awards:
+    threshold_score: 70
+    effectiveness_weight: 0.6
+    creativity_weight: 0.4
+
+config:
+  model: claude-3-opus-20240229
+  temperature: 0.7
+  max_tokens: 4096
+  cache_enabled: true
+  parallel_scoring: true
+
+monitoring:
+  track:
+    - scoring_accuracy
+    - prediction_performance
+    - recommendation_impact
+  alerts:
+    - metric: scoring_accuracy
+      threshold: 0.85
+      action: notify_team

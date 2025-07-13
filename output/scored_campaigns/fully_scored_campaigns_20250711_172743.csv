@@ -1,0 +1,53 @@
+campaign_id,name,brand,year,source,creative_effectiveness_score,roi_multiplier,brand_lift_percentage,engagement_rate,award_show,industry,country,region,csr_presence_binary,has_tech_innovation
+REAL_NISSAN_Nissan_Kic,Nissan Kicks x Formula E,Nissan,2025,Real_Portfolio,58.8,2.47,18.7,0.492,KIDLAT,Automotive,,,0,
+REAL_PRODUCTS_OF_PEACE_Products_o,Products of Peace Materials,Products of Peace,2025,Real_Portfolio,60.0,2.5,17.5,0.5,KIDLAT,Social Cause,,,1,
+REAL_OISHI_Oishi_Face,Oishi Face Pack,Oishi,2025,Real_Portfolio,53.8,2.35,17.3,0.459,KIDLAT,Food & Beverage,,,0,
+REAL_LOST_CONVERSATIONS_Lost_Conve,Lost Conversations Materials,Lost Conversations,2025,Real_Portfolio,60.5,2.51,16.2,0.503,KIDLAT,Social Cause,,,1,
+REAL_MCDONALD'S_McDonald's,McDonald's HIGANTES,McDonald's,2025,Real_Portfolio,57.4,2.43,19.0,0.483,KIDLAT,Food & Beverage,,,0,
+REAL_ANGKAS_Angkas_Ang,Angkas Angcuts,Angkas,2025,Real_Portfolio,59.7,2.49,16.7,0.498,KIDLAT,Transportation,,,0,
+REAL_MOVE_MOVE_#FixT,MOVE #FixThePhilippines,MOVE,2025,Real_Portfolio,57.4,2.44,18.4,0.483,KIDLAT,Social Cause,,,1,
+REAL_PPCRV_PPCRV_Baha,PPCRV Baha for Breakfast,PPCRV,2025,Real_Portfolio,59.7,2.49,19.1,0.498,KIDLAT,Social Cause,,,1,
+REAL_BOYSEN_Boysen_The,Boysen The Art Of Time,Boysen,2025,Real_Portfolio,55.5,2.39,15.4,0.47,KIDLAT,Home & Garden,,,0,
+REAL_HANA_Hana_Stron,Hana Strong Hair,Hana,2025,Real_Portfolio,60.3,2.51,19.8,0.502,KIDLAT,Personal Care,,,0,
+REAL_CALLA_Calla_Baho,Calla Bahopocalypse,Calla,2025,Real_Portfolio,56.5,2.41,17.6,0.477,KIDLAT,Beauty & Fashion,,,0,
+REAL_CHAMPION_Champion_P,Champion Price Drop,Champion,2025,Real_Portfolio,58.4,2.46,19.1,0.489,KIDLAT,Retail,,,0,
+REAL_KIDLAT_Kidlat_Hyp,Kidlat Hypercreativity,Kidlat,2025,Real_Portfolio,60.8,2.52,17.7,0.505,KIDLAT,Creative Services,,,0,
+REAL_NISSAN_Nissan_For,Nissan Formula E Digital,Nissan,2025,Real_Portfolio,60.6,2.52,17.9,0.504,KIDLAT,Automotive,,,0,
+REAL_NISSAN_Nissan_Ele,Nissan Electric Innovation,Nissan,2025,Real_Portfolio,67.8,2.7,18.7,0.552,KIDLAT,Automotive,,,0,
+REAL_MCDONALD'S_MCDONALD'S,MCDONALD'S LOVE KO TOK,McDonald's,2025,Real_Portfolio,53.7,2.34,15.1,0.458,KIDLAT,Food & Beverage,,,0,
+REAL_MAARTE_FAIR_MAARTE_FAI,MAARTE FAIR: FAB FINDS,Maarte Fair,2025,Real_Portfolio,51.3,2.28,15.7,0.442,KIDLAT,Events & Entertainment,,,0,
+REAL_ARTICULATE_ART_CULATE,ART_CULATE LOGO,Articulate,2025,Real_Portfolio,55.5,2.39,16.5,0.47,KIDLAT,Creative Services,,,0,
+REAL_AOY_AOY_2024_F,AOY 2024 Forging Excellence,AOY,2025,Real_Portfolio,54.0,2.35,14.2,0.46,KIDLAT,Awards & Recognition,,,0,
+REAL_ARTICULATE_Articulate,Articulate PH Logo Design,Articulate,2024,Real_Portfolio,64.9,2.62,18.3,0.532,Cannes Lions,Creative Services,,,0,
+REAL_HEAVEN_PALETTE_HEAVEN_PAL,HEAVEN PALETTE,Heaven Palette,2024,Real_Portfolio,68.9,2.72,22.0,0.559,Cannes Lions,Beauty & Fashion,,,0,
+REAL_WASHTAG_WASHTAG,WASHTAG,Washtag,2024,Real_Portfolio,70.8,2.77,20.5,0.572,Cannes Lions,Home & Garden,,,0,
+REAL_SG_ENABLE_#Frequentl,#FrequentlyAwkwardQuestions (FAQ),SG Enable,2024,Real_Portfolio,61.3,2.53,19.8,0.509,AOY,Social Cause,,,1,
+REAL_MCDONALD'S_McDonald's,McDonald's Lovin' All,McDonald's,2024,Real_Portfolio,60.8,2.52,19.1,0.506,AOY,Food & Beverage,,,0,
+REAL_SPOTIFY_Real_Data_,Real Data Sightings,Spotify,2024,Real_Portfolio,65.1,2.63,19.3,0.534,AOY,Technology,,,0,
+REAL_BAHAY_TULUYAN_Emoji_Frie,Emoji Friends,Bahay Tuluyan,2024,Real_Portfolio,59.5,2.49,19.5,0.497,AOY,Non-profit,,,1,
+REAL_OISHI_HOT_HIPON,HOT HIPON,Oishi,2020,Real_Portfolio,54.3,2.36,17.5,0.462,Creative Impact Awards,Food & Beverage,,,0,
+WARC_Decathlon_2024,The Breakaway: The first eCycling team for prisoners,Decathlon,2024,WARC,70.1,3.46,23.5,0.735,,Unknown,Unknown,Unknown,0,0.0
+WARC_Cadbury_2024,Shah Rukh Khan-My-Ad,Cadbury,2024,WARC,83.2,3.91,31.6,0.844,,Unknown,Unknown,Unknown,0,0.0
+WARC_UCash/Shwapno_2024,Project AgroBanking,UCash/Shwapno,2024,WARC,63.5,3.22,20.2,0.679,,Unknown,Unknown,Unknown,0,0.0
+WARC_KPN_2024,A Piece of Me,KPN,2024,WARC,65.5,3.29,21.9,0.696,,Unknown,Unknown,Unknown,0,0.0
+WARC_Home_Centre_2024,A Dad's Job,Home Centre,2024,WARC,63.6,3.23,24.2,0.68,,Unknown,Unknown,Unknown,0,0.0
+WARC_Cadbury_2024,Not Just a Cadbury Ad 2.0,Cadbury,2024,WARC,85.4,3.99,32.3,0.861,,Unknown,Unknown,Unknown,0,0.0
+WARC_ANZ_2024,From dreaming big to knowing HOW,ANZ,2024,WARC,62.9,3.2,22.0,0.674,,Unknown,Unknown,Unknown,0,0.0
+WARC_Jif_2024,The Lil Jif Project,Jif,2024,WARC,68.5,3.4,25.0,0.72,,Unknown,Unknown,Unknown,0,0.0
+WARC_KFC_2024,Michelin Impossible,KFC,2024,WARC,63.2,3.21,22.6,0.676,,Unknown,Unknown,Unknown,0,0.0
+WARC_DB_Export_2024,I'm Drinking It For You,DB Export,2024,WARC,70.2,3.46,23.4,0.735,,Unknown,Unknown,Unknown,0,0.0
+WARC_Nike_2024,Crazy Dreams,Nike,2024,WARC,63.6,3.23,23.2,0.68,,Unknown,Unknown,Unknown,0,0.0
+WARC_Microsoft_2024,Adlam – An alphabet to preserve a culture,Microsoft,2024,WARC,66.7,3.34,24.6,0.706,,Unknown,Unknown,Unknown,0,0.0
+WARC_Every_Kiwi_Vote_Counts_2024,Meddle in the New Zealand Election,Every Kiwi Vote Counts,2024,WARC,62.4,3.18,22.7,0.67,,Unknown,Unknown,Unknown,0,0.0
+WARC_Heinz_2024,It Has To Be Heinz,Heinz,2024,WARC,60.3,3.11,19.2,0.653,,Unknown,Unknown,Unknown,0,0.0
+WARC_McDonald's_2024,Famous Orders,McDonald's,2024,WARC,62.4,3.18,23.7,0.67,,Unknown,Unknown,Unknown,0,0.0
+WARC_Partners_Life_2024,Last Performance,Partners Life,2024,WARC,68.5,3.4,21.6,0.721,,Unknown,Unknown,Unknown,0,0.0
+WARC_Whisper_2024,Keep Girls In School,Whisper,2024,WARC,66.2,3.32,20.7,0.702,,Unknown,Unknown,Unknown,0,0.0
+WARC_AHR_Valley_Wine_Region_2024,#Flutwein - Our Worst Vintage,AHR Valley Wine Region,2024,WARC,60.9,3.13,23.7,0.658,,Unknown,Unknown,Unknown,0,0.0
+WARC_Dove_2024,The Cost of Beauty,Dove,2024,WARC,64.0,3.24,22.9,0.683,,Unknown,Unknown,Unknown,0,0.0
+WARC_Mayor_of_London_2024,Breaking the Silence,Mayor of London,2024,WARC,69.3,3.43,22.4,0.728,,Unknown,Unknown,Unknown,0,0.0
+WARC_Football_Australia_2024,Til It's Done,Football Australia,2024,WARC,60.6,3.12,18.9,0.655,,Unknown,Unknown,Unknown,0,0.0
+WARC_Burger_King_2024,Moldy Whopper,Burger King,2024,WARC,65.9,3.31,24.5,0.699,,Unknown,Unknown,Unknown,0,0.0
+WARC_Michelob_Ultra_2024,Contract for Change,Michelob Ultra,2024,WARC,68.1,3.38,23.5,0.717,,Unknown,Unknown,Unknown,0,0.0
+WARC_Cheetos_2024,Can't Touch This,Cheetos,2024,WARC,68.4,3.4,25.1,0.72,,Unknown,Unknown,Unknown,0,0.0
+WARC_Cadbury_Celebrations_2024,Shah Rukh Khan-My-Ad (2024 Version),Cadbury Celebrations,2024,WARC,83.0,3.91,29.4,0.842,,Unknown,Unknown,Unknown,0,0.0

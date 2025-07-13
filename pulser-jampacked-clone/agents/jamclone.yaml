@@ -1,0 +1,199 @@
+name: jamclone
+version: "1.0.0"
+description: Claude-powered creative intelligence orchestrator for JamPacked platform
+category: creative_analytics
+status: production
+backend: claude-3-opus
+
+inputs:
+  creative_asset:
+    type: object
+    required: true
+    properties:
+      asset_type:
+        type: string
+        enum: [video, image, audio, text, interactive]
+      asset_url:
+        type: string
+      platform_specs:
+        type: object
+        properties:
+          duration:
+            type: number
+          format:
+            type: string
+          dimensions:
+            type: string
+  
+  business_context:
+    type: object
+    required: true
+    properties:
+      industry:
+        type: string
+      brand_positioning:
+        type: string
+      target_audience:
+        type: object
+      competitive_landscape:
+        type: array
+  
+  success_metrics:
+    type: array
+    items:
+      type: string
+      enum: [awareness_lift, consideration, brand_recall, engagement_rate, conversion_rate]
+
+steps:
+  - name: retrieve_embedding
+    agent: gagambi
+    action: fetch_similar_creatives
+    parameters:
+      collection: creative_vectors
+      top_k: 10
+      filters:
+        industry: "${inputs.business_context.industry}"
+    
+  - name: analyze
+    agent: cesai
+    action: score_effectiveness
+    parameters:
+      creative_data: "${inputs.creative_asset}"
+      context: "${inputs.business_context}"
+      similar_creatives: "${steps.retrieve_embedding.results}"
+      scoring_dimensions:
+        - visual_complexity
+        - message_clarity
+        - brand_prominence
+        - emotional_resonance
+        - cultural_relevance
+    
+  - name: predict_performance
+    agent: cesai
+    action: forecast_metrics
+    parameters:
+      effectiveness_score: "${steps.analyze.score}"
+      target_metrics: "${inputs.success_metrics}"
+      industry_benchmarks: true
+    
+  - name: optimize
+    agent: cesai
+    action: suggest_improvements
+    parameters:
+      current_score: "${steps.analyze.score}"
+      gap_analysis: "${steps.predict_performance.gaps}"
+      optimization_priority: "${inputs.success_metrics[0]}"
+    
+  - name: award_simulation
+    agent: cesai
+    action: predict_awards
+    parameters:
+      effectiveness_score: "${steps.analyze.score}"
+      creative_features: "${steps.analyze.features}"
+      award_shows:
+        - cannes_lions
+        - effie_awards
+        - aoy_awards
+    
+  - name: visualize
+    agent: dash
+    action: render_analysis_dashboard
+    parameters:
+      analysis_results: "${steps.analyze}"
+      performance_forecast: "${steps.predict_performance}"
+      optimization_suggestions: "${steps.optimize}"
+      award_predictions: "${steps.award_simulation}"
+
+outputs:
+  effectiveness_score:
+    type: number
+    range: [0, 100]
+    description: Overall creative effectiveness score
+  
+  feature_scores:
+    type: object
+    properties:
+      visual_complexity:
+        type: number
+      message_clarity:
+        type: number
+      brand_prominence:
+        type: number
+      emotional_resonance:
+        type: number
+      cultural_relevance:
+        type: number
+  
+  performance_forecast:
+    type: object
+    properties:
+      awareness_lift:
+        type: number
+      consideration_increase:
+        type: number
+      engagement_rate:
+        type: number
+  
+  optimization_recommendations:
+    type: array
+    items:
+      type: object
+      properties:
+        recommendation:
+          type: string
+        impact:
+          type: string
+          enum: [high, medium, low]
+        effort:
+          type: string
+          enum: [high, medium, low]
+  
+  award_predictions:
+    type: object
+    properties:
+      cannes_lions:
+        type: object
+        properties:
+          probability:
+            type: number
+          category:
+            type: string
+      effie_awards:
+        type: object
+        properties:
+          probability:
+            type: number
+          level:
+            type: string
+
+config:
+  claude_model: claude-3-opus-20240229
+  temperature: 0.7
+  max_tokens: 4096
+  embedding_model: text-embedding-3-large
+  cache_ttl: 3600
+  parallel_processing: true
+
+dependencies:
+  - cesai: ">=1.0.0"
+  - dash: ">=1.0.0"
+  - gagambi: ">=1.0.0"
+  - chromadb: ">=0.4.0"
+  - postgresql: ">=15.0"
+
+permissions:
+  - read:campaigns
+  - write:analysis_results
+  - access:vector_db
+  - execute:claude_api
+
+monitoring:
+  metrics:
+    - analysis_latency
+    - prediction_accuracy
+    - api_calls_per_minute
+  alerts:
+    - type: latency
+      threshold: 900  # 15 minutes
+    - type: error_rate
+      threshold: 0.05

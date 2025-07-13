@@ -1,0 +1,288 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Optimization Objectives Schema",
+  "description": "Schema for defining campaign optimization objectives",
+  "type": "object",
+  "properties": {
+    "objective_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Unique identifier for the objective set"
+    },
+    "campaign_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Associated campaign ID"
+    },
+    "primary_objective": {
+      "type": "object",
+      "description": "Primary optimization goal",
+      "required": ["metric", "target_value", "priority"],
+      "properties": {
+        "metric": {
+          "type": "string",
+          "enum": [
+            "engagement_rate",
+            "conversion_rate",
+            "brand_awareness",
+            "consideration_lift",
+            "roi",
+            "cpa",
+            "reach",
+            "frequency",
+            "video_completion_rate"
+          ]
+        },
+        "target_value": {
+          "type": "number",
+          "description": "Target value for the metric"
+        },
+        "current_value": {
+          "type": "number",
+          "description": "Current value of the metric"
+        },
+        "priority": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Priority weight (0-1)"
+        },
+        "deadline": {
+          "type": "string",
+          "format": "date",
+          "description": "Target date to achieve objective"
+        }
+      }
+    },
+    "secondary_objectives": {
+      "type": "array",
+      "description": "Additional optimization goals",
+      "items": {
+        "type": "object",
+        "required": ["metric", "priority"],
+        "properties": {
+          "metric": {
+            "type": "string",
+            "enum": [
+              "engagement_rate",
+              "conversion_rate",
+              "brand_awareness",
+              "consideration_lift",
+              "roi",
+              "cpa",
+              "reach",
+              "frequency",
+              "video_completion_rate",
+              "quality_score",
+              "relevance_score",
+              "share_of_voice"
+            ]
+          },
+          "target_value": {
+            "type": "number"
+          },
+          "constraint_type": {
+            "type": "string",
+            "enum": ["minimize", "maximize", "maintain", "reach"],
+            "description": "How to optimize this metric"
+          },
+          "priority": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        }
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "description": "Optimization constraints",
+      "properties": {
+        "budget_constraints": {
+          "type": "object",
+          "properties": {
+            "total_budget": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Total available budget"
+            },
+            "daily_budget_cap": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Maximum daily spend"
+            },
+            "remaining_budget": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Budget remaining"
+            },
+            "budget_pacing": {
+              "type": "string",
+              "enum": ["standard", "accelerated", "even"],
+              "description": "Budget pacing strategy"
+            }
+          }
+        },
+        "performance_constraints": {
+          "type": "object",
+          "properties": {
+            "min_impressions_daily": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "max_frequency_cap": {
+              "type": "number",
+              "minimum": 0
+            },
+            "min_quality_score": {
+              "type": "number",
+              "minimum": 1,
+              "maximum": 10
+            },
+            "max_cpa": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Maximum cost per acquisition"
+            },
+            "min_roas": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Minimum return on ad spend"
+            }
+          }
+        },
+        "creative_constraints": {
+          "type": "object",
+          "properties": {
+            "allowed_formats": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Allowed creative formats"
+            },
+            "brand_safety_requirements": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "messaging_guidelines": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "targeting_constraints": {
+          "type": "object",
+          "properties": {
+            "geographic_limits": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "demographic_requirements": {
+              "type": "object",
+              "properties": {
+                "age_range": {
+                  "type": "object",
+                  "properties": {
+                    "min": {
+                      "type": "integer"
+                    },
+                    "max": {
+                      "type": "integer"
+                    }
+                  }
+                },
+                "gender": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": ["male", "female", "other", "all"]
+                  }
+                }
+              }
+            },
+            "exclude_audiences": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Audiences to exclude"
+            }
+          }
+        }
+      }
+    },
+    "optimization_strategy": {
+      "type": "object",
+      "description": "Optimization approach and parameters",
+      "properties": {
+        "approach": {
+          "type": "string",
+          "enum": ["conservative", "balanced", "aggressive", "experimental"],
+          "description": "Overall optimization approach"
+        },
+        "learning_period_days": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Days for learning phase"
+        },
+        "test_budget_percentage": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Percentage of budget for testing"
+        },
+        "optimization_frequency": {
+          "type": "string",
+          "enum": ["real_time", "hourly", "daily", "weekly"],
+          "description": "How often to optimize"
+        },
+        "auto_apply_recommendations": {
+          "type": "boolean",
+          "description": "Whether to auto-apply recommendations"
+        },
+        "performance_threshold": {
+          "type": "object",
+          "properties": {
+            "pause_if_below": {
+              "type": "number",
+              "description": "Pause if performance below this threshold"
+            },
+            "scale_if_above": {
+              "type": "number",
+              "description": "Scale up if performance above this threshold"
+            }
+          }
+        }
+      }
+    },
+    "success_criteria": {
+      "type": "object",
+      "description": "Criteria for optimization success",
+      "properties": {
+        "minimum_improvement": {
+          "type": "number",
+          "description": "Minimum % improvement required"
+        },
+        "statistical_significance": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Required confidence level"
+        },
+        "evaluation_window_days": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Days to evaluate success"
+        }
+      }
+    }
+  },
+  "required": ["objective_id", "campaign_id", "primary_objective"]
+}

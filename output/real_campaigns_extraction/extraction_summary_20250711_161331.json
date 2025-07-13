@@ -1,0 +1,65 @@
+{
+  "extraction_summary": {
+    "total_campaigns": 32,
+    "unique_brands": 21,
+    "award_shows": [
+      "KIDLAT",
+      "Cannes Lions",
+      "AOY",
+      "Creative Impact Awards"
+    ],
+    "year_range": "2020-2025",
+    "industries": {
+      "Social Cause": 8,
+      "Food & Beverage": 6,
+      "Automotive": 4,
+      "Creative Services": 3,
+      "Home & Garden": 2,
+      "Beauty & Fashion": 2,
+      "Transportation": 1,
+      "Personal Care": 1,
+      "Retail": 1,
+      "Events & Entertainment": 1,
+      "Awards & Recognition": 1,
+      "Technology": 1,
+      "Non-profit": 1
+    }
+  },
+  "effectiveness_stats": {
+    "mean_ces": 59.9,
+    "std_ces": 5.4,
+    "min_ces": 51.3,
+    "max_ces": 73.8,
+    "high_performers": 0
+  },
+  "csr_analysis": {
+    "csr_campaigns": 9,
+    "csr_avg_effectiveness": 61.7,
+    "non_csr_avg_effectiveness": 59.1
+  },
+  "award_analysis": {
+    "KIDLAT": {
+      "count": 22,
+      "avg_effectiveness": 57.6
+    },
+    "Cannes Lions": {
+      "count": 5,
+      "avg_effectiveness": 69.3
+    },
+    "AOY": {
+      "count": 4,
+      "avg_effectiveness": 61.7
+    },
+    "Creative Impact Awards": {
+      "count": 1,
+      "avg_effectiveness": 54.3
+    }
+  },
+  "feature_completeness": {
+    "total_features": 65,
+    "visual_features": 2,
+    "text_features": 6,
+    "innovation_features": 2,
+    "cultural_features": 4
+  }
+}

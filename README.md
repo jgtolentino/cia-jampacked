@@ -48,8 +48,9 @@ The platform uses a modular MCP (Model Context Protocol) architecture:
 #### Prerequisites
 - Docker & Docker Compose
 - Anthropic API Key
-- Python 3.8+
+- Python 3.9+
 - Node.js 16+
+- Pulser SDK 4.x
 
 #### Installation
 
@@ -58,9 +59,15 @@ The platform uses a modular MCP (Model Context Protocol) architecture:
 git clone https://github.com/jgtolentino/cia-jampacked.git
 cd cia-jampacked
 
+# Install Pulser SDK
+pip install pulser-sdk==4.*
+
 # Set up environment
 cp .env.example .env
 # Edit .env with your API keys
+
+# Install dependencies
+pip install -r requirements.txt
 
 # Start services
 docker-compose up -d

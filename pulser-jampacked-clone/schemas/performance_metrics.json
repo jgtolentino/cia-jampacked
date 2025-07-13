@@ -1,0 +1,334 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Performance Metrics Schema",
+  "description": "Schema for campaign performance metrics",
+  "type": "object",
+  "properties": {
+    "campaign_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Unique identifier for the campaign"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When these metrics were recorded"
+    },
+    "date_range": {
+      "type": "object",
+      "properties": {
+        "start_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "end_date": {
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "required": ["start_date", "end_date"]
+    },
+    "delivery_metrics": {
+      "type": "object",
+      "description": "Basic delivery metrics",
+      "properties": {
+        "impressions": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Total impressions delivered"
+        },
+        "reach": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Unique users reached"
+        },
+        "frequency": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Average frequency per user"
+        },
+        "spend": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Total spend in currency"
+        },
+        "cpm": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Cost per thousand impressions"
+        }
+      }
+    },
+    "engagement_metrics": {
+      "type": "object",
+      "description": "User engagement metrics",
+      "properties": {
+        "clicks": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "ctr": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Click-through rate"
+        },
+        "engagement_rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Overall engagement rate"
+        },
+        "likes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "shares": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "comments": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "saves": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "video_views": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "video_completion_rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "average_watch_time": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Average watch time in seconds"
+        }
+      }
+    },
+    "conversion_metrics": {
+      "type": "object",
+      "description": "Conversion and performance metrics",
+      "properties": {
+        "conversions": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "conversion_rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "cost_per_conversion": {
+          "type": "number",
+          "minimum": 0
+        },
+        "conversion_value": {
+          "type": "number",
+          "minimum": 0
+        },
+        "roas": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Return on ad spend"
+        },
+        "purchases": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "add_to_carts": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "checkout_initiated": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "leads": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "registrations": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "brand_metrics": {
+      "type": "object",
+      "description": "Brand lift and awareness metrics",
+      "properties": {
+        "brand_awareness_lift": {
+          "type": "number",
+          "description": "Percentage lift in brand awareness"
+        },
+        "brand_recall_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Brand recall score (0-100)"
+        },
+        "consideration_lift": {
+          "type": "number",
+          "description": "Percentage lift in consideration"
+        },
+        "favorability_lift": {
+          "type": "number",
+          "description": "Percentage lift in brand favorability"
+        },
+        "purchase_intent_lift": {
+          "type": "number",
+          "description": "Percentage lift in purchase intent"
+        },
+        "message_association": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Message association score"
+        }
+      }
+    },
+    "quality_metrics": {
+      "type": "object",
+      "description": "Content quality and relevance metrics",
+      "properties": {
+        "relevance_score": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 10,
+          "description": "Platform relevance score (1-10)"
+        },
+        "quality_score": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 10,
+          "description": "Platform quality score (1-10)"
+        },
+        "negative_feedback_rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Rate of negative feedback"
+        },
+        "positive_feedback_rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Rate of positive feedback"
+        }
+      }
+    },
+    "audience_insights": {
+      "type": "object",
+      "description": "Audience demographic and behavior insights",
+      "properties": {
+        "age_distribution": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        },
+        "gender_distribution": {
+          "type": "object",
+          "properties": {
+            "male": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "female": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "other": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          }
+        },
+        "geo_distribution": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        },
+        "device_distribution": {
+          "type": "object",
+          "properties": {
+            "mobile": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "desktop": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "tablet": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          }
+        },
+        "placement_performance": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "impressions": {
+                "type": "integer"
+              },
+              "ctr": {
+                "type": "number"
+              },
+              "conversion_rate": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    },
+    "calculated_metrics": {
+      "type": "object",
+      "description": "Calculated and derived metrics",
+      "properties": {
+        "effectiveness_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Overall creative effectiveness score"
+        },
+        "efficiency_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Cost efficiency score"
+        },
+        "engagement_index": {
+          "type": "number",
+          "description": "Indexed engagement vs benchmark"
+        },
+        "virality_coefficient": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Viral spread coefficient"
+        }
+      }
+    }
+  },
+  "required": ["campaign_id", "timestamp"]
+}
