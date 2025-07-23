@@ -106,4 +106,4 @@ $RECYCLE.BIN/
 *.pem
 *.p12
 *.jks
-secrets/
+secrets/etl/service-account-key.json
