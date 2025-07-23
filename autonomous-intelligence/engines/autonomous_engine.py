@@ -5,6 +5,7 @@ Converts reactive API system to proactive autonomous agent
 
 import asyncio
 import logging
+import math
 from typing import Dict, List, Any, Optional, Callable
 from dataclasses import dataclass, field
 from datetime import datetime, timedelta
@@ -13,7 +14,12 @@ import uuid
 import json
 from pathlib import Path
 
-logger = logging.getLogger(__name__)
+# Import production utilities
+from utils.structured_logger import get_logger, trace_context, PerformanceTimer
+from utils.cost_guard import BudgetType, create_goal_budgets, spend_budget, BudgetGuard
+from utils.semaphore import SemaphoreGuard
+
+logger = get_logger(__name__)
 
 
 class AgentState(Enum):
@@ -84,34 +90,55 @@ class AutonomousEngine:
         self._running = False
         self._execution_loop_task = None
         
-        logger.info("🤖 AutonomousEngine initialized with autonomy level %.2f", self.autonomy_level)
+        # Production controls
+        self._consecutive_idle_cycles = 0
+        self._base_execution_interval = self.execution_interval
+        self._max_execution_interval = min(300, self.execution_interval * 8)  # Cap at 5 minutes
+        
+        # Goal ID for cost tracking
+        self.goal_id = f"autonomous_engine_{uuid.uuid4().hex[:8]}"
+        
+        # Create budgets for this engine
+        self.budgets = create_goal_budgets(self.goal_id, {
+            BudgetType.TOKENS: 5000,
+            BudgetType.USD: 5.0,
+            BudgetType.TIME_SECONDS: 1800,  # 30 minutes
+            BudgetType.ITERATIONS: 50
+        })
+        
+        logger.info("🤖 AutonomousEngine initialized", 
+                   autonomy_level=self.autonomy_level,
+                   goal_id=self.goal_id,
+                   budgets_created=len(self.budgets))
     
     async def start_autonomous_operation(self, initial_goals: List[str] = None):
         """
         Start autonomous operation with self-triggering execution loops
         """
-        logger.info("🚀 Starting autonomous operation...")
-        
-        # Set initial goals
-        if initial_goals:
-            self.context.goals.extend(initial_goals)
-        
-        # Start the main autonomous execution loop
-        self._running = True
-        self._execution_loop_task = asyncio.create_task(self._autonomous_execution_loop())
-        
-        # Start parallel monitoring loops
-        monitoring_tasks = [
-            asyncio.create_task(self._goal_monitoring_loop()),
-            asyncio.create_task(self._performance_monitoring_loop()),
-            asyncio.create_task(self._learning_loop()),
-            asyncio.create_task(self._coordination_loop())
-        ]
-        
-        logger.info("✅ Autonomous operation started")
-        
-        # Wait for all loops to complete (they run indefinitely until stopped)
-        await asyncio.gather(self._execution_loop_task, *monitoring_tasks)
+        with trace_context(component="autonomous_engine", goal_id=self.goal_id):
+            logger.info("🚀 Starting autonomous operation", initial_goals=initial_goals)
+            
+            # Set initial goals
+            if initial_goals:
+                self.context.goals.extend(initial_goals)
+            
+            # Start the main autonomous execution loop
+            self._running = True
+            self._execution_loop_task = asyncio.create_task(self._autonomous_execution_loop())
+            
+            # Start parallel monitoring loops with semaphore control
+            monitoring_tasks = [
+                asyncio.create_task(self._goal_monitoring_loop()),
+                asyncio.create_task(self._performance_monitoring_loop()),
+                asyncio.create_task(self._learning_loop()),
+                asyncio.create_task(self._coordination_loop())
+            ]
+            
+            logger.info("✅ Autonomous operation started", 
+                       monitoring_loops=len(monitoring_tasks))
+            
+            # Wait for all loops to complete (they run indefinitely until stopped)
+            await asyncio.gather(self._execution_loop_task, *monitoring_tasks)
     
     async def stop_autonomous_operation(self):
         """Stop autonomous operation gracefully"""
@@ -135,38 +162,64 @@ class AutonomousEngine:
         """
         Main autonomous execution loop - the heart of agent autonomy
         Continuously evaluates, plans, and executes without external triggers
+        Uses exponential back-off to prevent CPU thrash during idle periods
         """
         loop_count = 0
         
         while self._running:
-            try:
-                loop_count += 1
-                logger.debug("🔄 Autonomous execution loop #%d", loop_count)
-                
-                # 1. State Assessment
-                await self._assess_current_state()
-                
-                # 2. Autonomous Decision Making
-                decisions = await self._make_autonomous_decisions()
-                
-                # 3. Task Generation and Prioritization
-                new_tasks = await self._generate_autonomous_tasks(decisions)
-                
-                # 4. Task Execution
-                await self._execute_ready_tasks()
-                
-                # 5. Progress Evaluation
-                await self._evaluate_progress()
-                
-                # 6. Adaptive Timing
-                next_interval = await self._calculate_adaptive_interval()
-                
-                # Sleep until next cycle
-                await asyncio.sleep(next_interval)
-                
-            except Exception as e:
-                logger.error("❌ Error in autonomous execution loop: %s", e)
-                await asyncio.sleep(self.execution_interval)  # Fallback interval
+            with trace_context(component="autonomous_engine", goal_id=self.goal_id):
+                try:
+                    loop_count += 1
+                    
+                    # Check budget before proceeding
+                    if not spend_budget(self.goal_id, BudgetType.ITERATIONS, 1, 
+                                      f"execution_loop_{loop_count}", "autonomous_execution_loop"):
+                        logger.warning("⚠️ Iteration budget exhausted, entering emergency mode")
+                        await asyncio.sleep(300)  # 5 minute pause
+                        continue
+                    
+                    with PerformanceTimer(logger, f"execution_loop_{loop_count}", 
+                                        loop_count=loop_count):
+                        # 1. State Assessment
+                        await self._assess_current_state()
+                        
+                        # 2. Autonomous Decision Making  
+                        decisions = await self._make_autonomous_decisions()
+                        
+                        # 3. Task Generation and Prioritization
+                        new_tasks = await self._generate_autonomous_tasks(decisions)
+                        
+                        # 4. Task Execution
+                        await self._execute_ready_tasks()
+                        
+                        # 5. Progress Evaluation
+                        await self._evaluate_progress()
+                        
+                        # 6. Determine if this was an idle cycle
+                        is_idle_cycle = (len(decisions) == 0 and len(new_tasks) == 0 and 
+                                       len(self.active_tasks) == 0)
+                        
+                        # 7. Calculate adaptive interval with exponential back-off
+                        next_interval = self._calculate_exponential_backoff_interval(is_idle_cycle)
+                        
+                        logger.debug("🔄 Execution loop completed", 
+                                   loop_count=loop_count,
+                                   decisions_made=len(decisions),
+                                   new_tasks=len(new_tasks),
+                                   is_idle=is_idle_cycle,
+                                   next_interval=next_interval)
+                    
+                    # Sleep until next cycle
+                    await asyncio.sleep(next_interval)
+                    
+                except Exception as e:
+                    logger.error("❌ Error in autonomous execution loop", 
+                               loop_count=loop_count, 
+                               error=str(e),
+                               error_type=type(e).__name__)
+                    # Exponential back-off on errors too
+                    error_interval = min(self.execution_interval * 2, 120)
+                    await asyncio.sleep(error_interval)
     
     async def _assess_current_state(self):
         """Assess current state and update agent status"""
@@ -317,59 +370,123 @@ class AutonomousEngine:
             await self._execute_task(task)
     
     async def _execute_task(self, task: AutonomousTask):
-        """Execute a single autonomous task"""
-        logger.info("🎯 Executing autonomous task: %s", task.name)
-        
-        # Move to active
-        self.task_queue.remove(task)
-        self.active_tasks[task.id] = task
-        task.status = "executing"
-        task.attempts += 1
-        
-        try:
-            # Route to appropriate execution handler
-            if task.name == "autonomous_creative_analysis":
-                result = await self._execute_creative_analysis(task)
-            elif task.name == "autonomous_performance_learning":
-                result = await self._execute_performance_learning(task)
-            elif task.name == "autonomous_agent_coordination":
-                result = await self._execute_agent_coordination(task)
-            elif task.name == "autonomous_self_reflection":
-                result = await self._execute_self_reflection(task)
-            else:
-                result = await self._execute_generic_task(task)
+        """Execute a single autonomous task with cost control"""
+        with trace_context(component="autonomous_engine", goal_id=self.goal_id, 
+                          task_id=task.id, task_name=task.name):
             
-            # Task completed successfully
-            task.result = result
-            task.status = "completed"
+            # Use semaphore to control concurrent task execution
+            semaphore_tag = f"task_{task.id}"
             
-            # Move to completed
-            del self.active_tasks[task.id]
-            self.completed_tasks.append(task)
-            
-            logger.info("✅ Task completed: %s", task.name)
-            
-        except Exception as e:
-            logger.error("❌ Task failed: %s - %s", task.name, e)
-            
-            # Handle failure
-            if task.attempts < task.max_attempts:
-                # Retry
-                task.status = "pending"
-                self.task_queue.append(task)
-                del self.active_tasks[task.id]
-            else:
-                # Give up
-                task.status = "failed"
-                task.result = {"error": str(e)}
-                del self.active_tasks[task.id]
-                self.completed_tasks.append(task)
+            try:
+                with SemaphoreGuard(semaphore_tag, max_active=self.max_concurrent_tasks, 
+                                  agent_type="autonomous_task"):
+                    
+                    # Move to active
+                    self.task_queue.remove(task)
+                    self.active_tasks[task.id] = task
+                    task.status = "executing"
+                    task.attempts += 1
+                    
+                    # Define budget for this task
+                    task_budget = {
+                        BudgetType.TOKENS: 500,
+                        BudgetType.USD: 0.5,
+                        BudgetType.TIME_SECONDS: 120  # 2 minutes per task
+                    }
+                    
+                    logger.info("🎯 Executing autonomous task", 
+                               task_name=task.name,
+                               task_id=task.id,
+                               attempt=task.attempts,
+                               priority=task.priority)
+                    
+                    try:
+                        with BudgetGuard(self.goal_id, task.name, task_budget) as budget_guard:
+                            with PerformanceTimer(logger, f"task_execution_{task.name}", 
+                                                task_id=task.id):
+                                # Route to appropriate execution handler
+                                if task.name == "autonomous_creative_analysis":
+                                    result = await self._execute_creative_analysis(task, budget_guard)
+                                elif task.name == "autonomous_performance_learning":
+                                    result = await self._execute_performance_learning(task, budget_guard)
+                                elif task.name == "autonomous_agent_coordination":
+                                    result = await self._execute_agent_coordination(task, budget_guard)
+                                elif task.name == "autonomous_self_reflection":
+                                    result = await self._execute_self_reflection(task, budget_guard)
+                                else:
+                                    result = await self._execute_generic_task(task, budget_guard)
+                        
+                        # Task completed successfully
+                        task.result = result
+                        task.status = "completed"
+                        
+                        # Move to completed
+                        del self.active_tasks[task.id]
+                        self.completed_tasks.append(task)
+                        
+                        logger.info("✅ Task completed successfully", 
+                                   task_name=task.name,
+                                   task_id=task.id,
+                                   execution_time=task.result.get("execution_time"))
+                        
+                    except RuntimeError as budget_error:
+                        if "budget" in str(budget_error).lower():
+                            logger.warning("💰 Task failed due to budget constraints", 
+                                         task_name=task.name,
+                                         error=str(budget_error))
+                            task.status = "budget_exceeded"
+                            task.result = {"error": "Budget exceeded", "details": str(budget_error)}
+                            del self.active_tasks[task.id]
+                            self.completed_tasks.append(task)
+                        else:
+                            raise
+                        
+                    except Exception as e:
+                        logger.error("❌ Task execution failed", 
+                                   task_name=task.name,
+                                   task_id=task.id,
+                                   error=str(e),
+                                   error_type=type(e).__name__)
+                        
+                        # Handle failure
+                        if task.attempts < task.max_attempts:
+                            # Retry
+                            task.status = "pending"
+                            self.task_queue.append(task)
+                            del self.active_tasks[task.id]
+                            logger.info("🔄 Task queued for retry", 
+                                       task_name=task.name,
+                                       attempt=task.attempts,
+                                       max_attempts=task.max_attempts)
+                        else:
+                            # Give up
+                            task.status = "failed"
+                            task.result = {"error": str(e)}
+                            del self.active_tasks[task.id]
+                            self.completed_tasks.append(task)
+                            logger.warning("💥 Task failed permanently", 
+                                         task_name=task.name,
+                                         attempts=task.attempts)
+                    
+            except RuntimeError as semaphore_error:
+                if "semaphore" in str(semaphore_error).lower():
+                    logger.warning("🚦 Task execution blocked by semaphore limit", 
+                                 task_name=task.name,
+                                 max_active=self.max_concurrent_tasks)
+                    # Task stays in queue for later execution
+                else:
+                    raise
     
-    async def _execute_creative_analysis(self, task: AutonomousTask) -> Dict[str, Any]:
-        """Execute autonomous creative analysis"""
-        # This would integrate with the existing JamPacked analysis engine
-        # For now, simulate the analysis
+    async def _execute_creative_analysis(self, task: AutonomousTask, budget_guard) -> Dict[str, Any]:
+        """Execute autonomous creative analysis with cost tracking"""
+        # Track token usage for analysis
+        budget_guard.spend(BudgetType.TOKENS, 300, "creative_analysis_tokens")
+        budget_guard.spend(BudgetType.USD, 0.3, "creative_analysis_cost")
         
+        # Simulate processing time
+        await asyncio.sleep(2)
+        
+        # This would integrate with the existing JamPacked analysis engine
         analysis_result = {
             "campaigns_analyzed": 15,
             "patterns_discovered": 3,
@@ -384,7 +501,8 @@ class AutonomousEngine:
                 "Consider warmer color schemes for retail campaigns"
             ],
             "autonomous_trigger": True,
-            "confidence_score": 0.87
+            "confidence_score": 0.87,
+            "execution_time": datetime.now().isoformat()
         }
         
         # Store insights for future use
@@ -392,8 +510,13 @@ class AutonomousEngine:
         
         return analysis_result
     
-    async def _execute_performance_learning(self, task: AutonomousTask) -> Dict[str, Any]:
-        """Execute autonomous performance learning"""
+    async def _execute_performance_learning(self, task: AutonomousTask, budget_guard) -> Dict[str, Any]:
+        """Execute autonomous performance learning with cost tracking"""
+        budget_guard.spend(BudgetType.TOKENS, 200, "learning_tokens")
+        budget_guard.spend(BudgetType.USD, 0.2, "learning_cost")
+        
+        await asyncio.sleep(1.5)
+        
         learning_result = {
             "patterns_updated": 7,
             "model_improvements": [
@@ -402,13 +525,19 @@ class AutonomousEngine:
                 "Brand recall model recalibrated"
             ],
             "learning_source": "autonomous_analysis",
-            "validation_score": 0.91
+            "validation_score": 0.91,
+            "execution_time": datetime.now().isoformat()
         }
         
         return learning_result
     
-    async def _execute_agent_coordination(self, task: AutonomousTask) -> Dict[str, Any]:
-        """Execute autonomous agent coordination"""
+    async def _execute_agent_coordination(self, task: AutonomousTask, budget_guard) -> Dict[str, Any]:
+        """Execute autonomous agent coordination with cost tracking"""
+        budget_guard.spend(BudgetType.TOKENS, 150, "coordination_tokens")
+        budget_guard.spend(BudgetType.USD, 0.15, "coordination_cost")
+        
+        await asyncio.sleep(1)
+        
         coordination_result = {
             "agents_coordinated": task.context.get("target_agents", []),
             "tasks_delegated": 2,
@@ -416,13 +545,19 @@ class AutonomousEngine:
             "specialist_insights": [
                 "Data quality assessment completed by DataFabcon",
                 "Creative scoring enhanced by CESAI"
-            ]
+            ],
+            "execution_time": datetime.now().isoformat()
         }
         
         return coordination_result
     
-    async def _execute_self_reflection(self, task: AutonomousTask) -> Dict[str, Any]:
-        """Execute autonomous self-reflection"""
+    async def _execute_self_reflection(self, task: AutonomousTask, budget_guard) -> Dict[str, Any]:
+        """Execute autonomous self-reflection with cost tracking"""
+        budget_guard.spend(BudgetType.TOKENS, 100, "reflection_tokens")
+        budget_guard.spend(BudgetType.USD, 0.1, "reflection_cost")
+        
+        await asyncio.sleep(0.5)
+        
         reflection_result = {
             "performance_review": {
                 "accuracy": 0.89,
@@ -439,13 +574,19 @@ class AutonomousEngine:
                 "Retrain emotion classifier on recent data",
                 "Implement better cross-modal alignment"
             ],
-            "reflection_trigger": "autonomous"
+            "reflection_trigger": "autonomous",
+            "execution_time": datetime.now().isoformat()
         }
         
         return reflection_result
     
-    async def _execute_generic_task(self, task: AutonomousTask) -> Dict[str, Any]:
-        """Execute generic autonomous task"""
+    async def _execute_generic_task(self, task: AutonomousTask, budget_guard) -> Dict[str, Any]:
+        """Execute generic autonomous task with cost tracking"""
+        budget_guard.spend(BudgetType.TOKENS, 50, "generic_task_tokens")
+        budget_guard.spend(BudgetType.USD, 0.05, "generic_task_cost")
+        
+        await asyncio.sleep(0.2)
+        
         return {
             "task_id": task.id,
             "execution_time": datetime.now().isoformat(),
@@ -560,17 +701,33 @@ class AutonomousEngine:
         completed_task_ids = {t.id for t in self.completed_tasks if t.status == "completed"}
         return all(dep_id in completed_task_ids for dep_id in task.dependencies)
     
-    async def _calculate_adaptive_interval(self) -> float:
-        """Calculate adaptive interval based on current state"""
-        base_interval = self.execution_interval
-        
-        # Adapt based on workload
-        if len(self.active_tasks) > self.max_concurrent_tasks * 0.8:
-            return base_interval * 1.5  # Slow down when busy
-        elif len(self.task_queue) == 0 and len(self.active_tasks) == 0:
-            return base_interval * 2  # Slow down when idle
+    def _calculate_exponential_backoff_interval(self, is_idle_cycle: bool) -> float:
+        """
+        Calculate execution interval with exponential back-off during idle periods
+        Prevents CPU thrash while maintaining responsiveness
+        """
+        if is_idle_cycle:
+            self._consecutive_idle_cycles += 1
         else:
-            return base_interval
+            self._consecutive_idle_cycles = 0
+        
+        if self._consecutive_idle_cycles == 0:
+            # Active cycle - use base interval
+            interval = self._base_execution_interval
+        else:
+            # Exponential back-off: base * 2^(idle_cycles - 1)
+            # But cap the growth to prevent excessive delays
+            backoff_multiplier = min(2 ** (self._consecutive_idle_cycles - 1), 8)
+            interval = self._base_execution_interval * backoff_multiplier
+            interval = min(interval, self._max_execution_interval)
+        
+        logger.debug("⏱️ Calculated execution interval", 
+                    is_idle=is_idle_cycle,
+                    consecutive_idle_cycles=self._consecutive_idle_cycles,
+                    interval=interval,
+                    base_interval=self._base_execution_interval)
+        
+        return interval
     
     async def _store_autonomous_insights(self, insights: Dict[str, Any]):
         """Store insights discovered autonomously"""

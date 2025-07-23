@@ -321,10 +321,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - jampacked.tbwa.com
+    - jampacked.pulser.com
     secretName: jampacked-tls
   rules:
-  - host: jampacked.tbwa.com
+  - host: jampacked.pulser.com
     http:
       paths:
       - path: /

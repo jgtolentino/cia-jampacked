@@ -18,7 +18,12 @@ from .reflection_engine import ReflectionEngine, create_reflection_engine
 from .multi_agent_coordinator import MultiAgentCoordinator, create_multi_agent_coordinator
 from .learning_memory_system import LearningMemorySystem, create_learning_memory_system
 
-logger = logging.getLogger(__name__)
+# Import production utilities
+from utils.structured_logger import get_logger, trace_context, PerformanceTimer
+from utils.cost_guard import BudgetType, create_goal_budgets, spend_budget, get_budget_status
+from utils.semaphore import get_active_count, get_active_agents
+
+logger = get_logger(__name__)
 
 
 class OrchestrationMode(Enum):
@@ -89,7 +94,21 @@ class AutonomousOrchestrator:
         self._running = False
         self._orchestration_tasks: List[asyncio.Task] = []
         
-        logger.info("🎼 AutonomousOrchestrator initialized with %d engines", 4)
+        # Goal ID for cost tracking
+        self.goal_id = f"orchestrator_{uuid.uuid4().hex[:8]}"
+        
+        # Create budgets for orchestration
+        self.budgets = create_goal_budgets(self.goal_id, {
+            BudgetType.TOKENS: 20000,
+            BudgetType.USD: 20.0,
+            BudgetType.TIME_SECONDS: 7200,  # 2 hours
+            BudgetType.ITERATIONS: 200
+        })
+        
+        logger.info("🎼 AutonomousOrchestrator initialized", 
+                   engines_count=4,
+                   goal_id=self.goal_id,
+                   objectives_count=len(self.primary_objectives))
     
     async def start_autonomous_operations(self, initial_goals: Optional[List[str]] = None):
         """
@@ -147,87 +166,119 @@ class AutonomousOrchestrator:
     async def process_creative_task_autonomously(self, 
                                                task: Dict[str, Any]) -> Dict[str, Any]:
         """
-        Process a creative task using full autonomous capabilities
+        Process a creative task using full autonomous capabilities with production controls
         This demonstrates true agent behavior - no human intervention needed
         """
-        logger.info("🎯 Processing creative task autonomously: %s", task.get('name', 'unnamed'))
-        
-        # Retrieve relevant memories and experiences
-        relevant_memories = await self.learning_system.retrieve_relevant_memories(
-            query_context=task,
-            max_results=10
-        )
-        
-        # Autonomous decision: Should this be coordinated across specialists?
-        coordination_decision = await self._make_coordination_decision(task, relevant_memories)
-        
-        if coordination_decision["coordinate"]:
-            # Use multi-agent coordination
-            result = await self.coordinator.coordinate_complex_task(
-                task_description=task.get('description', ''),
-                required_capabilities=coordination_decision["required_capabilities"],
-                complexity_level=coordination_decision["complexity"],
-                priority=task.get('priority', 3)
-            )
-        else:
-            # Process with single autonomous engine
-            result = await self._process_with_autonomous_engine(task, relevant_memories)
-        
-        # Autonomous reflection on the result
-        reflection_result = await self.reflection_engine.reflect_on_output_quality(
-            output=result,
-            expected_quality=task.get('quality_expectations')
-        )
-        
-        # Learn from this experience
-        if 'expected_outcome' in task:
-            learning_result = await self.learning_system.learn_from_prediction(
-                task_type=task.get('type', 'creative_analysis'),
-                input_data=task,
-                prediction=result,
-                actual_outcome=task['expected_outcome']
-            )
-        else:
-            # Store as experience for future learning
-            learning_result = await self._store_experience_for_future_learning(task, result)
-        
-        # Autonomous adaptation based on reflection and learning
-        adaptations = await self._apply_autonomous_adaptations(
-            reflection_result, learning_result
-        )
-        
-        # Update system state
-        self.system_state.autonomous_decisions_made += 1
-        self.system_state.reflection_cycles_completed += 1
-        self.system_state.learning_experiences_processed += 1
-        
-        final_result = {
-            "task_result": result,
-            "reflection_insights": reflection_result,
-            "learning_outcome": learning_result,
-            "autonomous_adaptations": adaptations,
-            "coordination_used": coordination_decision["coordinate"],
-            "processing_metadata": {
-                "memories_used": len(relevant_memories),
-                "processing_time": datetime.now().isoformat(),
-                "autonomy_level": "full",
-                "decision_confidence": coordination_decision.get("confidence", 0.8)
-            }
-        }
-        
-        # Record this operation in history
-        self.operational_history.append({
-            "timestamp": datetime.now(),
-            "operation": "autonomous_creative_task",
-            "input": task,
-            "output": final_result,
-            "system_state": self.system_state.__dict__.copy()
-        })
-        
-        logger.info("✅ Autonomous creative task completed with %d adaptations", 
-                   len(adaptations))
-        
-        return final_result
+        with trace_context(component="autonomous_orchestrator", goal_id=self.goal_id,
+                          task_name=task.get('name', 'unnamed')):
+            
+            # Check budget before processing
+            if not spend_budget(self.goal_id, BudgetType.ITERATIONS, 1, 
+                              f"task_{task.get('name', 'unnamed')}", "process_creative_task"):
+                logger.warning("💰 Task processing blocked due to budget constraints")
+                raise RuntimeError("Insufficient budget for task processing")
+            
+            with PerformanceTimer(logger, f"autonomous_task_{task.get('type', 'unknown')}", 
+                                task_name=task.get('name', 'unnamed')):
+                
+                logger.info("🎯 Processing creative task autonomously", 
+                           task_name=task.get('name', 'unnamed'),
+                           task_type=task.get('type', 'unknown'))
+                
+                # Check system health before proceeding
+                system_health = await self._check_system_health()
+                if system_health.get("status") != "healthy":
+                    logger.warning("⚠️ System health degraded, adjusting processing")
+                
+                # Retrieve relevant memories and experiences
+                relevant_memories = await self.learning_system.retrieve_relevant_memories(
+                    query_context=task,
+                    max_results=10
+                )
+                
+                # Autonomous decision: Should this be coordinated across specialists?
+                coordination_decision = await self._make_coordination_decision(task, relevant_memories)
+                
+                if coordination_decision["coordinate"]:
+                    # Use multi-agent coordination
+                    spend_budget(self.goal_id, BudgetType.TOKENS, 500, 
+                               "coordination_overhead", "process_creative_task")
+                    result = await self.coordinator.coordinate_complex_task(
+                        task_description=task.get('description', ''),
+                        required_capabilities=coordination_decision["required_capabilities"],
+                        complexity_level=coordination_decision["complexity"],
+                        priority=task.get('priority', 3)
+                    )
+                else:
+                    # Process with single autonomous engine
+                    spend_budget(self.goal_id, BudgetType.TOKENS, 200, 
+                               "single_engine_processing", "process_creative_task")
+                    result = await self._process_with_autonomous_engine(task, relevant_memories)
+                
+                # Autonomous reflection on the result
+                reflection_result = await self.reflection_engine.reflect_on_output_quality(
+                    output=result,
+                    expected_quality=task.get('quality_expectations')
+                )
+                
+                # Learn from this experience
+                if 'expected_outcome' in task:
+                    learning_result = await self.learning_system.learn_from_prediction(
+                        task_type=task.get('type', 'creative_analysis'),
+                        input_data=task,
+                        prediction=result,
+                        actual_outcome=task['expected_outcome']
+                    )
+                else:
+                    # Store as experience for future learning
+                    learning_result = await self._store_experience_for_future_learning(task, result)
+                
+                # Autonomous adaptation based on reflection and learning
+                adaptations = await self._apply_autonomous_adaptations(
+                    reflection_result, learning_result
+                )
+                
+                # Update system state
+                self.system_state.autonomous_decisions_made += 1
+                self.system_state.reflection_cycles_completed += 1
+                self.system_state.learning_experiences_processed += 1
+                
+                # Get current system status
+                budget_status = get_budget_status(self.goal_id)
+                active_agents = get_active_count()
+                
+                final_result = {
+                    "task_result": result,
+                    "reflection_insights": reflection_result,
+                    "learning_outcome": learning_result,
+                    "autonomous_adaptations": adaptations,
+                    "coordination_used": coordination_decision["coordinate"],
+                    "processing_metadata": {
+                        "memories_used": len(relevant_memories),
+                        "processing_time": datetime.now().isoformat(),
+                        "autonomy_level": "full",
+                        "decision_confidence": coordination_decision.get("confidence", 0.8),
+                        "budget_utilization": budget_status.get("total_spent_usd", 0),
+                        "active_agents": active_agents,
+                        "system_health": system_health.get("status", "unknown")
+                    }
+                }
+                
+                # Record this operation in history
+                self.operational_history.append({
+                    "timestamp": datetime.now(),
+                    "operation": "autonomous_creative_task",
+                    "input": task,
+                    "output": final_result,
+                    "system_state": self.system_state.__dict__.copy()
+                })
+                
+                logger.info("✅ Autonomous creative task completed", 
+                           adaptations_count=len(adaptations),
+                           coordination_used=coordination_decision["coordinate"],
+                           budget_spent=budget_status.get("total_spent_usd", 0))
+                
+                return final_result
     
     async def _master_orchestration_loop(self):
         """
@@ -575,8 +626,41 @@ class AutonomousOrchestrator:
         pass
     
     async def _check_all_engine_health(self) -> Dict[str, Any]:
-        """Check health of all engines"""
-        return {"overall_status": "healthy", "issues_detected": False}
+        """Check health of all engines with budget and agent monitoring"""
+        health_status = {"overall_status": "healthy", "issues_detected": False}
+        
+        # Check budget health
+        budget_status = get_budget_status(self.goal_id)
+        if budget_status.get("warnings"):
+            health_status["budget_warnings"] = budget_status["warnings"]
+            health_status["issues_detected"] = True
+        
+        # Check agent health
+        active_agents = get_active_count()
+        if active_agents > 15:  # High agent count might indicate runaway spawning
+            health_status["agent_count_high"] = active_agents
+            health_status["issues_detected"] = True
+        
+        # Check engine responsiveness
+        engine_health = {
+            "autonomous_engine": "responsive" if self.autonomous_engine else "offline",
+            "reflection_engine": "responsive" if self.reflection_engine else "offline",
+            "coordinator": "responsive" if self.coordinator else "offline",
+            "learning_system": "responsive" if self.learning_system else "offline"
+        }
+        
+        health_status["engine_status"] = engine_health
+        
+        # Overall health assessment
+        if any(status == "offline" for status in engine_health.values()):
+            health_status["overall_status"] = "degraded"
+            health_status["issues_detected"] = True
+        
+        return health_status
+    
+    async def _check_system_health(self) -> Dict[str, Any]:
+        """Quick system health check"""
+        return await self._check_all_engine_health()
     
     async def _handle_health_issues(self, status: Dict[str, Any]):
         """Handle health issues autonomously"""

@@ -262,8 +262,8 @@ class MultiAgentCoordinator:
                 # Monitor agent workload
                 workload_analysis = await self._analyze_agent_workload()
                 
-                # Spawn agents if needed
-                if workload_analysis["spawn_needed"]:
+                # Spawn agents if needed (with semaphore control)
+                if workload_analysis.get("spawn_needed", False):
                     await self._spawn_needed_agents(workload_analysis)
                 
                 # Retire underperforming agents
@@ -793,6 +793,119 @@ class MultiAgentCoordinator:
     
     async def _check_swarm_convergence(self, contributions: List[Dict[str, Any]]) -> bool:
         return False
+    
+    async def _spawn_needed_agents(self, workload_analysis):
+        """Spawn agents based on workload analysis with semaphore control"""
+        needed_capabilities = workload_analysis.get("needed_capabilities", [])
+        
+        for capability in needed_capabilities:
+            try:
+                # Check if we're within limits before spawning
+                current_count = get_active_count()
+                if current_count >= self.global_agent_limit:
+                    logger.warning("🚫 Skipping agent spawn - global limit reached",
+                                 current_count=current_count,
+                                 limit=self.global_agent_limit)
+                    break
+                
+                agent_type = await self._determine_agent_type_for_capability(capability)
+                agent = await self.spawn_specialist_agent(agent_type)
+                
+                if agent:
+                    logger.info("📈 Spawned agent for workload demand", 
+                               capability=capability,
+                               agent_type=agent_type.value)
+                else:
+                    logger.warning("⚠️ Failed to spawn agent for capability", 
+                                 capability=capability)
+                    
+            except Exception as e:
+                logger.error("❌ Error spawning agent for capability", 
+                           capability=capability,
+                           error=str(e))
+    
+    async def _initialize_agent_with_budget(self, agent: SpecialistAgent):
+        """Initialize agent with budget tracking"""
+        # Create budget for this agent
+        agent_goal_id = f"agent_{agent.id[:8]}"
+        agent.learning_state["goal_id"] = agent_goal_id
+        
+        # Create smaller budget for individual agents
+        agent_budgets = create_goal_budgets(agent_goal_id, {
+            BudgetType.TOKENS: 1000,
+            BudgetType.USD: 1.0,
+            BudgetType.TIME_SECONDS: 600,  # 10 minutes
+            BudgetType.ITERATIONS: 20
+        })
+        
+        agent.learning_state["budgets"] = agent_budgets
+        agent.status = AgentStatus.IDLE
+        
+        logger.info("🛠️ Agent initialized with budget tracking", 
+                   agent_id=agent.id[:8],
+                   goal_id=agent_goal_id)
+    
+    async def _delegate_to_agent_with_budget(self, agent: SpecialistAgent, task: Dict[str, Any]) -> Dict[str, Any]:
+        """Delegate task to agent with budget control"""
+        agent_goal_id = agent.learning_state.get("goal_id")
+        
+        if not agent_goal_id:
+            # Fallback to regular delegation if no budget setup
+            return await self._delegate_to_agent(agent, task)
+        
+        # Check agent's budget before delegation
+        if not spend_budget(agent_goal_id, BudgetType.ITERATIONS, 1, 
+                          f"task_{task.get('name', 'unknown')}", "delegate_to_agent"):
+            logger.warning("💰 Agent task blocked due to budget constraints",
+                         agent_id=agent.id[:8])
+            return {"error": "Agent budget exhausted", "success": False}
+        
+        # Update agent status
+        agent.status = AgentStatus.BUSY
+        agent.current_task = task.get('name', 'unknown_task')
+        agent.last_active = datetime.now()
+        
+        try:
+            # Execute task (simulate for now)
+            with PerformanceTimer(logger, f"agent_task_{agent.agent_type.value}", 
+                                agent_id=agent.id[:8]):
+                await asyncio.sleep(1)  # Simulate work
+                
+                result = {
+                    "agent_id": agent.id,
+                    "agent_type": agent.agent_type.value,
+                    "task_completed": True,
+                    "insights": [f"Analysis from {agent.agent_type.value}"],
+                    "success": True,
+                    "execution_time": datetime.now().isoformat()
+                }
+            
+            # Track cost
+            spend_budget(agent_goal_id, BudgetType.TOKENS, 50, 
+                        "task_execution", "agent_task")
+            
+            return result
+            
+        finally:
+            # Reset agent status
+            agent.status = AgentStatus.IDLE
+            agent.current_task = None
+    
+    async def _find_fallback_agent(self) -> Optional[SpecialistAgent]:
+        """Find a fallback agent when specific capability not available"""
+        if not self.specialist_agents:
+            return None
+        
+        # Find least busy agent
+        idle_agents = [agent for agent in self.specialist_agents.values() 
+                      if agent.status == AgentStatus.IDLE]
+        
+        if idle_agents:
+            return idle_agents[0]
+        
+        # If no idle agents, find least recently active
+        return min(self.specialist_agents.values(), 
+                  key=lambda a: a.last_active)
 
 
 # Factory function
