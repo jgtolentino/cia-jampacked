@@ -1,0 +1,243 @@
+{
+  "metadata": {
+    "extraction_date": "2025-07-11",
+    "total_cases": 25,
+    "unique_campaigns": 24,
+    "source_authority": "WARC Effective 100 (2021-2025) + WARC Awards for Effectiveness",
+    "feature_categories": [
+      "basic_identification",
+      "market_context", 
+      "business_challenge",
+      "campaign_strategy",
+      "creative_execution",
+      "performance_metrics",
+      "technology_integration",
+      "cultural_social_elements",
+      "agency_credits",
+      "awards_recognition"
+    ]
+  },
+  "case_studies": [
+    {
+      "case_id": "warc_001",
+      "warc_file_id": "149664_Decathlon_The_Breakaway_The_firs.pdf",
+      "campaign_identification": {
+        "campaign_name": "The Breakaway: The first eCycling team for prisoners",
+        "brand": "Decathlon",
+        "parent_company": "Decathlon SA",
+        "publication_year": 2023,
+        "warc_source": "WARC Effective 100",
+        "industry_sector": "Sports/Retail",
+        "sub_category": "Sports Equipment & Apparel"
+      },
+      "market_context": {
+        "primary_market": "Belgium",
+        "market_type": "Developed",
+        "target_audience": "General public + cycling community",
+        "audience_demographics": {
+          "primary": "Adults interested in sports and social causes",
+          "secondary": "Cycling enthusiasts",
+          "tertiary": "Prison reform advocates"
+        }
+      },
+      "business_challenge": {
+        "primary_challenge": "Demonstrate how sport can change people's lives",
+        "market_situation": "Need to showcase transformative power of sport",
+        "competitive_context": "Sports brands competing on purpose-driven messaging"
+      },
+      "campaign_objectives": {
+        "primary_objective": "Show sport's transformative power for prisoners",
+        "secondary_objectives": [
+          "Raise awareness about prison rehabilitation",
+          "Generate positive brand associations",
+          "Create earned media attention"
+        ]
+      },
+      "strategy_execution": {
+        "core_strategy": "First eCycling team for prisoners via Zwift platform",
+        "innovation_factor": "First-of-kind prisoner eCycling team",
+        "execution_elements": [
+          "Six prisoners chosen to ride online with other cyclists",
+          "Launch film introduction",
+          "Live Facebook broadcast of race",
+          "Podcast showing prisoner transformation stories"
+        ]
+      },
+      "creative_elements": {
+        "content_types": ["Video", "Podcast", "Live Stream"],
+        "emotional_appeal": "High - transformation stories",
+        "visual_style": "Documentary/Reality",
+        "messaging_tone": "Inspirational, authentic",
+        "brand_integration": "Moderate - focus on purpose over product"
+      },
+      "channels_media": {
+        "primary_channels": ["Facebook Live", "Podcast", "Launch Film"],
+        "media_mix": "Digital-first with earned media amplification",
+        "paid_owned_earned": {
+          "paid": "Low",
+          "owned": "Medium", 
+          "earned": "High"
+        }
+      },
+      "technology_integration": {
+        "tech_enabled": true,
+        "platforms_used": ["Zwift platform"],
+        "innovation_level": "High - virtual cycling integration",
+        "digital_sophistication": "Medium-High"
+      },
+      "csr_purpose_elements": {
+        "csr_integrated": true,
+        "csr_themes": ["Social rehabilitation", "Prison reform", "Sports inclusion"],
+        "authenticity_level": "High",
+        "purpose_prominence": "Primary campaign driver"
+      },
+      "performance_metrics": {
+        "reach_metrics": {
+          "total_reach": "15+ million people",
+          "earned_media_value": "€1.3 million"
+        },
+        "engagement_metrics": {
+          "social_engagement": "High",
+          "media_mentions": "Significant"
+        },
+        "business_impact": {
+          "brand_awareness_lift": "Not specified",
+          "sales_impact": "Not specified",
+          "roi_reported": "Not specified"
+        }
+      },
+      "awards_recognition": {
+        "warc_effective_100": true,
+        "other_awards": "Not specified",
+        "industry_recognition": "Yes - featured in WARC"
+      },
+      "agency_credits": {
+        "creative_agency": "BBDO Brussels",
+        "media_agency": "Semetis Brussels",
+        "key_personnel": [
+          "Jan Dejonghe - Creative Director",
+          "Debby De Ridder - Copywriter",
+          "Frederik Clarysse, Tom Jacobs - Creative"
+        ]
+      },
+      "cultural_relevance": {
+        "cultural_context": "High - prison rehabilitation",
+        "local_adaptation": "Medium",
+        "global_scalability": "High"
+      }
+    },
+    {
+      "case_id": "warc_025",
+      "warc_file_id": "154952_Cadbury_Shah_Rukh_KhanMyA_v2.pdf",
+      "campaign_identification": {
+        "campaign_name": "Shah Rukh Khan-My-Ad (2024 Version)",
+        "brand": "Cadbury Celebrations",
+        "parent_company": "Mondelez International",
+        "publication_year": 2024,
+        "warc_source": "WARC Effective 100",
+        "industry_sector": "FMCG/Confectionery",
+        "sub_category": "Chocolate & Confectionery"
+      },
+      "market_context": {
+        "primary_market": "India",
+        "market_type": "Emerging",
+        "target_audience": "Indian families and local store owners",
+        "audience_demographics": {
+          "primary": "Indian consumers across age groups",
+          "geographic_focus": "Pan-India with hyper-local store targeting"
+        }
+      },
+      "business_challenge": {
+        "primary_challenge": "COVID impact, inflation, shift to e-commerce threatening local stores",
+        "market_situation": "Small retailers struggling against online giants like Amazon",
+        "competitive_context": "Need to support local business ecosystem while growing brand"
+      },
+      "campaign_objectives": {
+        "primary_objective": "Support local stores while growing mental availability",
+        "secondary_objectives": [
+          "Generate user-created content at scale",
+          "Increase brand consideration and sales",
+          "Strengthen community connections"
+        ]
+      },
+      "strategy_execution": {
+        "core_strategy": "Hyper-personalized ads with Shah Rukh Khan for thousands of stores",
+        "innovation_factor": "AI-powered personalization at unprecedented scale",
+        "execution_elements": [
+          "130k unique personalized video ads",
+          "Shah Rukh Khan mentioning specific store names",
+          "User-generated content platform",
+          "YouTube and Meta amplification",
+          "Geo-targeted delivery system"
+        ]
+      },
+      "creative_elements": {
+        "content_types": ["Personalized Video Ads", "Interactive Platform", "UGC Campaign"],
+        "celebrity_endorsement": {
+          "featured": true,
+          "celebrity": "Shah Rukh Khan",
+          "role": "Brand ambassador for local stores"
+        },
+        "emotional_appeal": "High - community support, local pride",
+        "cultural_relevance": "Very High - Bollywood star supporting neighborhood stores",
+        "personalization_level": "Extreme - 130k unique versions"
+      },
+      "channels_media": {
+        "primary_channels": ["YouTube", "Meta (Facebook/Instagram)", "Brand website"],
+        "media_mix": "Digital-first with social amplification",
+        "personalization_level": "Hyper-personalized at store level"
+      },
+      "technology_integration": {
+        "tech_enabled": true,
+        "platforms_used": ["AI personalization engine", "Video generation technology", "Geo-targeting"],
+        "innovation_level": "Very High - mass personalization",
+        "digital_sophistication": "Very High"
+      },
+      "csr_purpose_elements": {
+        "csr_integrated": true,
+        "csr_themes": ["Supporting local businesses", "Community commerce", "Economic empowerment"],
+        "authenticity_level": "High",
+        "purpose_prominence": "Co-primary with brand messaging"
+      },
+      "performance_metrics": {
+        "reach_metrics": {
+          "total_impressions": "1.4M impressions",
+          "generated_videos": "130k unique videos created",
+          "user_participation": "High engagement rates"
+        },
+        "engagement_metrics": {
+          "organic_mentions": "11k positive organic mentions",
+          "user_generated_content": "130k personalized videos",
+          "social_sharing": "Significant viral spread"
+        },
+        "business_impact": {
+          "sales_uplift": "35% sales increase",
+          "consideration_increase": "7.3% lift in brand consideration",
+          "roi_reported": "Significant positive ROI",
+          "local_store_impact": "Measurable support to local retailers"
+        }
+      },
+      "awards_recognition": {
+        "warc_effective_100": true,
+        "effectiveness_rating": "High for personalization innovation",
+        "industry_recognition": "Recognized for AI-powered creativity"
+      },
+      "agency_credits": {
+        "creative_agency": "Ogilvy Mumbai",
+        "media_agency": "Wavemaker Mumbai",
+        "key_personnel": [
+          "Sukesh Nayak - Chief Creative Officer, India",
+          "Hemant Sharma - Group Creative Director",
+          "Harshad Rajadhyaksha - Chief Creative Officer",
+          "Kainaz Karmakar - Chief Creative Officer",
+          "Ganapathy Balagopalan - Head of Strategic Planning"
+        ]
+      },
+      "cultural_relevance": {
+        "cultural_context": "Very High - leveraging Bollywood celebrity culture",
+        "local_adaptation": "Extreme - store-level personalization",
+        "global_scalability": "Medium - requires local celebrity and infrastructure"
+      }
+    }
+  ]
+}

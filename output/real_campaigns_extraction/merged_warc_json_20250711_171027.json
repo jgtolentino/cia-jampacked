@@ -1,0 +1,2490 @@
+{
+  "metadata": {
+    "extraction_date": "2025-07-11",
+    "merge_date": "2025-07-11T17:10:27.343981",
+    "source_files": [
+      "warc_comprehensive_json.json",
+      "complete_warc_json.json"
+    ],
+    "source_authority": "WARC Effective 100 (2021-2025) + WARC Awards for Effectiveness",
+    "feature_categories": [
+      "agency_credits",
+      "awards_recognition",
+      "basic_identification",
+      "business_challenge",
+      "campaign_strategy",
+      "creative_execution",
+      "cultural_social_elements",
+      "market_context",
+      "performance_metrics",
+      "technology_integration"
+    ],
+    "total_cases": 25,
+    "unique_campaigns": 25,
+    "brand_distribution": {
+      "AHR Valley Wine Region": 1,
+      "ANZ": 1,
+      "Burger King": 1,
+      "Cadbury": 2,
+      "Cadbury Celebrations": 1,
+      "Cheetos": 1,
+      "DB Export": 1,
+      "Decathlon": 1,
+      "Dove": 1,
+      "Every Kiwi Vote Counts": 1,
+      "Football Australia": 1,
+      "Heinz": 1,
+      "Home Centre": 1,
+      "Jif": 1,
+      "KFC": 1,
+      "KPN": 1,
+      "Mayor of London": 1,
+      "McDonald's": 1,
+      "Michelob Ultra": 1,
+      "Microsoft": 1,
+      "Nike": 1,
+      "Partners Life": 1,
+      "UCash/Shwapno": 1,
+      "Whisper": 1
+    },
+    "year_distribution": {
+      "Unknown": 25
+    },
+    "country_distribution": {
+      "Unknown": 25
+    },
+    "top_brands": [
+      [
+        "Cadbury",
+        2
+      ],
+      [
+        "Decathlon",
+        1
+      ],
+      [
+        "UCash/Shwapno",
+        1
+      ],
+      [
+        "KPN",
+        1
+      ],
+      [
+        "Home Centre",
+        1
+      ],
+      [
+        "ANZ",
+        1
+      ],
+      [
+        "Jif",
+        1
+      ],
+      [
+        "KFC",
+        1
+      ],
+      [
+        "DB Export",
+        1
+      ],
+      [
+        "Nike",
+        1
+      ]
+    ]
+  },
+  "case_studies": [
+    {
+      "case_id": "warc_001",
+      "warc_file_id": "149664_Decathlon_The_Breakaway_The_firs.pdf",
+      "campaign_identification": {
+        "campaign_name": "The Breakaway: The first eCycling team for prisoners",
+        "brand": "Decathlon",
+        "parent_company": "Decathlon SA",
+        "publication_year": 2023,
+        "warc_source": "WARC Effective 100",
+        "industry_sector": "Sports/Retail",
+        "sub_category": "Sports Equipment & Apparel"
+      },
+      "market_context": {
+        "primary_market": "Belgium",
+        "market_type": "Developed",
+        "target_audience": "General public + cycling community",
+        "audience_demographics": {
+          "primary": "Adults interested in sports and social causes",
+          "secondary": "Cycling enthusiasts",
+          "tertiary": "Prison reform advocates"
+        }
+      },
+      "business_challenge": {
+        "primary_challenge": "Demonstrate how sport can change people's lives",
+        "market_situation": "Need to showcase transformative power of sport",
+        "competitive_context": "Sports brands competing on purpose-driven messaging"
+      },
+      "campaign_objectives": {
+        "primary_objective": "Show sport's transformative power for prisoners",
+        "secondary_objectives": [
+          "Raise awareness about prison rehabilitation",
+          "Generate positive brand associations",
+          "Create earned media attention"
+        ]
+      },
+      "strategy_execution": {
+        "core_strategy": "First eCycling team for prisoners via Zwift platform",
+        "innovation_factor": "First-of-kind prisoner eCycling team",
+        "execution_elements": [
+          "Six prisoners chosen to ride online with other cyclists",
+          "Launch film introduction",
+          "Live Facebook broadcast of race",
+          "Podcast showing prisoner transformation stories"
+        ]
+      },
+      "creative_elements": {
+        "content_types": [
+          "Video",
+          "Podcast",
+          "Live Stream"
+        ],
+        "emotional_appeal": "High - transformation stories",
+        "visual_style": "Documentary/Reality",
+        "messaging_tone": "Inspirational, authentic",
+        "brand_integration": "Moderate - focus on purpose over product"
+      },
+      "channels_media": {
+        "primary_channels": [
+          "Facebook Live",
+          "Podcast",
+          "Launch Film"
+        ],
+        "media_mix": "Digital-first with earned media amplification",
+        "paid_owned_earned": {
+          "paid": "Low",
+          "owned": "Medium",
+          "earned": "High"
+        }
+      },
+      "technology_integration": {
+        "tech_enabled": true,
+        "platforms_used": [
+          "Zwift platform"
+        ],
+        "innovation_level": "High - virtual cycling integration",
+        "digital_sophistication": "Medium-High"
+      },
+      "csr_purpose_elements": {
+        "csr_integrated": true,
+        "csr_themes": [
+          "Social rehabilitation",
+          "Prison reform",
+          "Sports inclusion"
+        ],
+        "authenticity_level": "High",
+        "purpose_prominence": "Primary campaign driver"
+      },
+      "performance_metrics": {
+        "reach_metrics": {
+          "total_reach": "15+ million people",
+          "earned_media_value": "€1.3 million"
+        },
+        "engagement_metrics": {
+          "social_engagement": "High",
+          "media_mentions": "Significant"
+        },
+        "business_impact": {
+          "brand_awareness_lift": "Not specified",
+          "sales_impact": "Not specified",
+          "roi_reported": "Not specified"
+        }
+      },
+      "awards_recognition": {
+        "warc_effective_100": true,
+        "other_awards": "Not specified",
+        "industry_recognition": "Yes - featured in WARC"
+      },
+      "agency_credits": {
+        "creative_agency": "BBDO Brussels",
+        "media_agency": "Semetis Brussels",
+        "key_personnel": [
+          "Jan Dejonghe - Creative Director",
+          "Debby De Ridder - Copywriter",
+          "Frederik Clarysse, Tom Jacobs - Creative"
+        ]
+      },
+      "cultural_relevance": {
+        "cultural_context": "High - prison rehabilitation",
+        "local_adaptation": "Medium",
+        "global_scalability": "High"
+      }
+    },
+    {
+      "case_id": "warc_002",
+      "warc_file_id": "154952_Cadbury_Shah_Rukh_KhanMyA.pdf",
+      "campaign_identification": {
+        "campaign_name": "Shah Rukh Khan-My-Ad",
+        "brand": "Cadbury",
+        "parent_company": "Mondelez International",
+        "publication_year": 2024,
+        "warc_source": "WARC Effective 100",
+        "industry_sector": "FMCG/Confectionery",
+        "sub_category": "Chocolate & Confectionery"
+      },
+      "market_context": {
+        "primary_market": "India",
+        "market_type": "Emerging",
+        "target_audience": "Indian families",
+        "audience_demographics": {
+          "primary": "Indian consumers across age groups",
+          "geographic_focus": "Pan-India with local store emphasis"
+        }
+      },
+      "business_challenge": {
+        "primary_challenge": "COVID impact, inflation, online shopping shift",
+        "market_situation": "Small retailers struggling against online giants like Amazon",
+        "competitive_context": "E-commerce threatening traditional retail"
+      },
+      "campaign_objectives": {
+        "primary_objective": "Support local stores, increase mental availability",
+        "secondary_objectives": [
+          "Encourage shopping at small local stores",
+          "Grow brand consideration",
+          "Generate user-created content"
+        ]
+      },
+      "strategy_execution": {
+        "core_strategy": "Hyper-personalized ads with SRK for every store",
+        "innovation_factor": "Hyper-personalization at scale",
+        "execution_elements": [
+          "AI-powered personalized video ads",
+          "Shah Rukh Khan mentioning specific store names",
+          "User-generated content platform",
+          "Geo-targeted delivery"
+        ]
+      },
+      "creative_elements": {
+        "content_types": [
+          "Video Ads",
+          "Interactive Platform"
+        ],
+        "celebrity_endorsement": {
+          "featured": true,
+          "celebrity": "Shah Rukh Khan",
+          "role": "Brand ambassador for local stores"
+        },
+        "emotional_appeal": "High - community support",
+        "cultural_relevance": "Very High - Bollywood star, local stores"
+      },
+      "channels_media": {
+        "primary_channels": [
+          "YouTube",
+          "Meta",
+          "Website"
+        ],
+        "media_mix": "Digital-focused with high amplification",
+        "personalization_level": "Hyper-personalized"
+      },
+      "technology_integration": {
+        "tech_enabled": true,
+        "platforms_used": [
+          "AI voice synthesis",
+          "Geo-targeting",
+          "Video personalization"
+        ],
+        "innovation_level": "Very High",
+        "digital_sophistication": "Very High"
+      },
+      "csr_purpose_elements": {
+        "csr_integrated": true,
+        "csr_themes": [
+          "Supporting local businesses",
+          "Community support"
+        ],
+        "authenticity_level": "High",
+        "purpose_prominence": "Co-primary with brand message"
+      },
+      "performance_metrics": {
+        "reach_metrics": {
+          "total_impressions": "1.4M impressions",
+          "generated_videos": "130k unique videos"
+        },
+        "engagement_metrics": {
+          "organic_mentions": "11k positive mentions",
+          "user_generated_content": "130k videos"
+        },
+        "business_impact": {
+          "sales_uplift": "35%",
+          "consideration_increase": "7.3%",
+          "roi_reported": "Significant positive ROI"
+        }
+      },
+      "awards_recognition": {
+        "warc_effective_100": true,
+        "effectiveness_rating": "High"
+      },
+      "agency_credits": {
+        "creative_agency": "Ogilvy Mumbai",
+        "media_agency": "Wavemaker Mumbai",
+        "key_personnel": [
+          "Sukesh Nayak - Chief Creative Officer",
+          "Hemant Sharma - Group Creative Director"
+        ]
+      }
+    },
+    {
+      "case_id": "warc_003",
+      "warc_file_id": "143438_UCash_Shwapno_Project_AgroBankin.pdf",
+      "campaign_identification": {
+        "campaign_name": "Project AgroBanking",
+        "brand": "UCash/Shwapno",
+        "parent_company": "United Commercial Bank (UCB)",
+        "publication_year": 2022,
+        "warc_source": "WARC Effective 100",
+        "industry_sector": "Financial Services",
+        "sub_category": "Banking & Financial Inclusion"
+      },
+      "market_context": {
+        "primary_market": "Bangladesh",
+        "market_type": "Developing",
+        "target_audience": "Rural farmers",
+        "audience_demographics": {
+          "primary": "Unbanked rural farmers",
+          "economic_status": "Low to middle income",
+          "geographic_focus": "Rural Bangladesh"
+        }
+      },
+      "business_challenge": {
+        "primary_challenge": "33% population unbanked, rural farmers excluded",
+        "market_situation": "UCB seen as traditional bank lacking innovation",
+        "competitive_context": "Financial inclusion gap in rural areas"
+      },
+      "campaign_objectives": {
+        "primary_objective": "Enable farmers to sell produce at fair prices",
+        "secondary_objectives": [
+          "Increase bank account penetration",
+          "Modernize bank image",
+          "Create sustainable farmer value chain"
+        ]
+      },
+      "strategy_execution": {
+        "core_strategy": "Collection points for produce-to-bank account conversion",
+        "innovation_factor": "First agro-banking platform",
+        "execution_elements": [
+          "Physical collection points setup",
+          "Direct produce-to-money conversion",
+          "Megaphone announcements in rural areas",
+          "Social media education"
+        ]
+      },
+      "channels_media": {
+        "primary_channels": [
+          "OOH",
+          "Video",
+          "Megaphone announcements",
+          "Social media"
+        ],
+        "media_mix": "Traditional + Digital hybrid",
+        "rural_outreach": "High emphasis on ground-level communication"
+      },
+      "technology_integration": {
+        "tech_enabled": true,
+        "platforms_used": [
+          "Digital banking platform",
+          "Mobile payments"
+        ],
+        "innovation_level": "Medium-High",
+        "financial_tech": "Banking integration system"
+      },
+      "csr_purpose_elements": {
+        "csr_integrated": true,
+        "csr_themes": [
+          "Financial inclusion",
+          "Rural development",
+          "Fair trade"
+        ],
+        "authenticity_level": "Very High",
+        "purpose_prominence": "Primary campaign driver"
+      },
+      "performance_metrics": {
+        "reach_metrics": {
+          "locations_reached": "100+ locations",
+          "new_accounts": "122,000 new bank accounts"
+        },
+        "business_impact": {
+          "account_acquisition": "122k new accounts",
+          "geographic_expansion": "100+ rural locations",
+          "roi_reported": "Not specified but implied positive"
+        }
+      },
+      "awards_recognition": {
+        "warc_effective_100": true,
+        "social_impact": "High recognition"
+      }
+    },
+    {
+      "case_id": "warc_004",
+      "warc_file_id": "159467_KPN_A_Piece_of_M.pdf",
+      "campaign_identification": {
+        "campaign_name": "A Piece of Me",
+        "brand": "KPN",
+        "parent_company": "KPN (Royal KPN N.V.)",
+        "publication_year": 2025,
+        "warc_source": "WARC Effective 100",
+        "industry_sector": "Telecommunications",
+        "sub_category": "Mobile & Internet Services"
+      },
+      "market_context": {
+        "primary_market": "Netherlands",
+        "market_type": "Developed",
+        "target_audience": "Dutch teenagers",
+        "audience_demographics": {
+          "primary": "13-19 year olds",
+          "issue_focus": "Online safety and mental health"
+        }
+      },
+      "business_challenge": {
+        "primary_challenge": "33,000 Dutch teens had intimate footage shared without consent",
+        "market_situation": "Online shaming leading to depression and suicide",
+        "social_issue": "Society blaming victims rather than perpetrators"
+      },
+      "campaign_objectives": {
+        "primary_objective": "Transform attitudes towards online shaming",
+        "secondary_objectives": [
+          "Increase awareness of online safety",
+          "Build brand consideration among youth",
+          "Create cultural conversation about consent"
+        ]
+      },
+      "strategy_execution": {
+        "core_strategy": "TikTok talk show + musician MEAU collaboration",
+        "innovation_factor": "TikTok talk show format",
+        "execution_elements": [
+          "Expert-moderated TikTok conversations",
+          "Song creation based on real victim stories",
+          "Music video highlighting online shaming impact",
+          "Multi-platform amplification"
+        ]
+      },
+      "creative_elements": {
+        "content_types": [
+          "TikTok Talk Show",
+          "Music",
+          "Music Video"
+        ],
+        "celebrity_endorsement": {
+          "featured": true,
+          "celebrity": "MEAU (Dutch musician)",
+          "role": "Collaborating artist and advocate"
+        },
+        "emotional_appeal": "Very High - mental health, safety"
+      },
+      "channels_media": {
+        "primary_channels": [
+          "TikTok",
+          "Music streaming platforms"
+        ],
+        "media_mix": "Native social + Music industry integration"
+      },
+      "technology_integration": {
+        "tech_enabled": true,
+        "platforms_used": [
+          "TikTok platform",
+          "Streaming platforms"
+        ],
+        "innovation_level": "Medium",
+        "social_media_native": true
+      },
+      "csr_purpose_elements": {
+        "csr_integrated": true,
+        "csr_themes": [
+          "Online safety",
+          "Mental health",
+          "Youth protection"
+        ],
+        "authenticity_level": "Very High",
+        "purpose_prominence": "Primary campaign driver"
+      },
+      "performance_metrics": {
+        "reach_metrics": {
+          "music_streams": "10+ million streams",
+          "music_achievement": "Gold record status"
+        },
+        "business_impact": {
+          "conversation_uplift": "183% increase in online shaming conversations",
+          "brand_consideration": "9% increase",
+          "cultural_impact": "Significant - policy discussions initiated"
+        }
+      },
+      "awards_recognition": {
+        "warc_effective_100": true,
+        "music_industry": "Gold record achievement"
+      }
+    },
+    {
+      "case_id": "warc_005",
+      "warc_file_id": "143435_Home_Centre_A_Dads_Jo.pdf",
+      "campaign_identification": {
+        "campaign_name": "A Dad's Job",
+        "brand": "Home Centre",
+        "parent_company": "Landmark Group",
+        "publication_year": 2022,
+        "warc_source": "WARC Effective 100",
+        "industry_sector": "Home Furnishing/Retail",
+        "sub_category": "Home Decor & Furniture"
+      },
+      "market_context": {
+        "primary_market": "UAE",
+        "market_type": "Developed",
+        "target_audience": "Middle East families",
+        "cultural_context": "15% of homes don't have fathers, single mothers are cultural taboo"
+      },
+      "business_challenge": {
+        "primary_challenge": "Single mothers remain a cultural taboo in Middle East",
+        "market_situation": "Father's Day marketing ignores single mother households",
+        "social_issue": "Lack of recognition for single mothers' dual role"
+      },
+      "campaign_objectives": {
+        "primary_objective": "Disrupt Father's Day, highlight single mothers",
+        "secondary_objectives": [
+          "Challenge cultural taboos",
+          "Generate conversation about family structures",
+          "Drive brand awareness and sales"
+        ]
+      },
+      "strategy_execution": {
+        "core_strategy": "Celebrate real single mothers and their children",
+        "innovation_factor": "Counter-narrative to Father's Day",
+        "execution_elements": [
+          "Real single mother stories",
+          "Influencer amplification",
+          "News show seeding",
+          "Career workshops for single mothers"
+        ]
+      },
+      "creative_elements": {
+        "content_types": [
+          "Film",
+          "Documentary Content",
+          "Educational Workshops"
+        ],
+        "emotional_appeal": "Very High - family, empowerment",
+        "cultural_relevance": "Very High - Middle Eastern family structures",
+        "authenticity": "High - real stories"
+      },
+      "channels_media": {
+        "primary_channels": [
+          "Film",
+          "Influencers",
+          "News shows",
+          "Career workshops"
+        ],
+        "media_mix": "Integrated approach across earned and owned"
+      },
+      "technology_integration": {
+        "tech_enabled": false,
+        "innovation_level": "Low - focus on content and messaging",
+        "digital_sophistication": "Medium"
+      },
+      "csr_purpose_elements": {
+        "csr_integrated": true,
+        "csr_themes": [
+          "Social equality",
+          "Women empowerment",
+          "Family diversity"
+        ],
+        "authenticity_level": "Very High",
+        "purpose_prominence": "Primary campaign driver"
+      },
+      "performance_metrics": {
+        "reach_metrics": {
+          "earned_impressions": "1.1 billion"
+        },
+        "business_impact": {
+          "revenue_increase": "120%",
+          "cultural_impact": "Significant conversation generation",
+          "brand_awareness": "Substantial lift"
+        }
+      },
+      "awards_recognition": {
+        "warc_effective_100": true,
+        "cultural_impact": "High recognition for challenging taboos"
+      },
+      "agency_credits": {
+        "creative_agency": "FP7 McCann Dubai",
+        "media_agency": "Initiative Cairo",
+        "key_personnel": [
+          "Tahaab Rais - Regional Head of Strategy, Creative Director",
+          "Fouad Abdel Malak, Oliver Robinson - Regional ECD"
+        ]
+      }
+    },
+    {
+      "case_id": "warc_006",
+      "warc_file_id": "149667_Cadbury_Not_Just_a_Cadbury_Ad_.0.pdf",
+      "campaign_identification": {
+        "campaign_name": "Not Just a Cadbury Ad 2.0",
+        "brand": "Cadbury",
+        "parent_company": "Mondelez International",
+        "publication_year": 2023,
+        "warc_source": "WARC Effective 100",
+        "industry_sector": "FMCG/Confectionery",
+        "sub_category": "Chocolate & Confectionery"
+      },
+      "market_context": {
+        "primary_market": "India",
+        "market_type": "Emerging",
+        "target_audience": "Indian families during Diwali",
+        "seasonal_context": "Diwali gifting festival"
+      },
+      "business_challenge": {
+        "primary_challenge": "COVID muted Diwali, retailers averse to stocking",
+        "market_situation": "70% of gifting inventory held by small local shops under pressure",
+        "competitive_context": "Online giants growing during pandemic"
+      },
+      "campaign_objectives": {
+        "primary_objective": "Help local stores, encourage shopping there",
+        "secondary_objectives": [
+          "Boost Diwali sales",
+          "Support local business ecosystem",
+          "Increase household penetration"
+        ]
+      },
+      "strategy_execution": {
+        "core_strategy": "Voice AI-activated geo-targeted ads with Shah Rukh Khan",
+        "innovation_factor": "AI voice personalization",
+        "execution_elements": [
+          "Geo-targeted voice AI ads",
+          "Shah Rukh Khan mentioning specific shop names",
+          "Hyper-local personalization",
+          "Digital amplification"
+        ]
+      },
+      "creative_elements": {
+        "content_types": [
+          "Voice AI Ads",
+          "Digital Video"
+        ],
+        "celebrity_endorsement": {
+          "featured": true,
+          "celebrity": "Shah Rukh Khan",
+          "role": "Voice for local stores"
+        },
+        "emotional_appeal": "High - festival, community",
+        "cultural_relevance": "Very High - Diwali, local stores"
+      },
+      "channels_media": {
+        "primary_channels": [
+          "Digital",
+          "Voice AI"
+        ],
+        "media_mix": "AI-powered digital activation"
+      },
+      "technology_integration": {
+        "tech_enabled": true,
+        "platforms_used": [
+          "Voice AI",
+          "Geo-targeting",
+          "Personalization engine"
+        ],
+        "innovation_level": "Very High",
+        "digital_sophistication": "Very High"
+      },
+      "csr_purpose_elements": {
+        "csr_integrated": true,
+        "csr_themes": [
+          "Supporting local businesses",
+          "Community commerce"
+        ],
+        "authenticity_level": "High",
+        "purpose_prominence": "Co-primary"
+      },
+      "performance_metrics": {
+        "business_impact": {
+          "household_penetration": "3-year high of 9.4%",
+          "local_store_support": "Significant",
+          "roi_reported": "Positive based on penetration gains"
+        }
+      },
+      "awards_recognition": {
+        "warc_effective_100": true
+      },
+      "agency_credits": {
+        "creative_agency": "Ogilvy Mumbai",
+        "media_agency": "Wavemaker Mumbai"
+      }
+    },
+    {
+      "case_id": "warc_007",
+      "warc_file_id": "159582_ANZ_From_dreaming_big_to_knowing.pdf",
+      "campaign_identification": {
+        "campaign_name": "From dreaming big to knowing HOW",
+        "brand": "ANZ",
+        "parent_company": "Australia and New Zealand Banking Group",
+        "publication_year": 2025,
+        "warc_source": "WARC Effective 100",
+        "industry_sector": "Banking/Financial Services",
+        "sub_category": "Retail Banking"
+      },
+      "market_context": {
+        "primary_market": "New Zealand",
+        "market_type": "Developed",
+        "target_audience": "New Zealand consumers",
+        "cultural_context": "Post-pandemic NZ independence mindset"
+      },
+      "business_challenge": {
+        "primary_challenge": "Eroding share of voice, reputational issues, declining consideration",
+        "market_situation": "Culture and conduct issues affecting NZ big banks",
+        "competitive_context": "Banking industry reputation challenges"
+      },
+      "campaign_objectives": {
+        "primary_objective": "Influence customer experience and product innovation",
+        "secondary_objectives": [
+          "Rebuild brand consideration",
+          "Increase marketing influence within organization",
+          "Connect with NZ cultural shift"
+        ]
+      },
+      "strategy_execution": {
+        "core_strategy": "All-of-business platform: 'If you have a WHY, we have the HOW'",
+        "innovation_factor": "All-of-business platform approach",
+        "execution_elements": [
+          "Cross-business integration",
+          "In-branch implementation",
+          "Staff training programs",
+          "New product development",
+          "Customer experience transformation"
+        ]
+      },
+      "creative_elements": {
+        "content_types": [
+          "Integrated Communications",
+          "Service Design"
+        ],
+        "emotional_appeal": "Medium - empowerment",
+        "cultural_relevance": "High - NZ independence mindset",
+        "brand_integration": "Very High - total business transformation"
+      },
+      "channels_media": {
+        "primary_channels": [
+          "Communications",
+          "In-branch",
+          "Staff training",
+          "Customer experience"
+        ],
+        "media_mix": "Integrated business transformation approach"
+      },
+      "technology_integration": {
+        "tech_enabled": false,
+        "innovation_level": "Medium",
+        "business_transformation": "High - new products and tools"
+      },
+      "csr_purpose_elements": {
+        "csr_integrated": false,
+        "focus": "Business empowerment rather than social cause"
+      },
+      "performance_metrics": {
+        "business_impact": {
+          "profit_roi": "Significant positive ROI",
+          "marketing_influence": "Increased within organization",
+          "brand_consideration": "Improved"
+        }
+      },
+      "awards_recognition": {
+        "warc_effective_100": true
+      }
+    },
+    {
+      "case_id": "warc_008",
+      "warc_file_id": "149665_Jif_The_Lil_Jif_Projec.pdf",
+      "campaign_identification": {
+        "campaign_name": "The Lil Jif Project",
+        "brand": "Jif",
+        "parent_company": "The J.M. Smucker Company",
+        "publication_year": 2023,
+        "warc_source": "WARC Effective 100",
+        "industry_sector": "FMCG/Food",
+        "sub_category": "Peanut Butter & Spreads"
+      },
+      "market_context": {
+        "primary_market": "United States",
+        "market_type": "Developed",
+        "target_audience": "Younger consumers",
+        "cultural_context": "COVID pandemic impact on category"
+      },
+      "business_challenge": {
+        "primary_challenge": "Losing households/share, category declined 10.9%",
+        "market_situation": "COVID impact on peanut butter category",
+        "competitive_context": "Need for cultural relevance with youth"
+      },
+      "campaign_objectives": {
+        "primary_objective": "Improve category share, perception, brand searches",
+        "secondary_objectives": [
+          "Connect with younger consumers",
+          "Increase cultural relevance",
+          "Drive organic website traffic"
+        ]
+      },
+      "strategy_execution": {
+        "core_strategy": "Partner with Ludacris, music video, TikTok challenge",
+        "innovation_factor": "Music industry crossover",
+        "execution_elements": [
+          "Ludacris collaboration",
+          "New single release",
+          "Music video production",
+          "TikTok challenge",
+          "Street artist album cover design",
+          "Diamond encrusted Jif necklace"
+        ]
+      },
+      "creative_elements": {
+        "content_types": [
+          "Music",
+          "Music Video",
+          "TikTok Challenge",
+          "Limited Edition Products"
+        ],
+        "celebrity_endorsement": {
+          "featured": true,
+          "celebrity": "Ludacris",
+          "role": "Music collaborator"
+        },
+        "emotional_appeal": "Medium - music, entertainment",
+        "cultural_relevance": "High - rap culture"
+      },
+      "channels_media": {
+        "primary_channels": [
+          "TV",
+          "Online video",
+          "OOH",
+          "Social",
+          "Search",
+          "Spotify"
+        ],
+        "media_mix": "Full spectrum approach"
+      },
+      "technology_integration": {
+        "tech_enabled": true,
+        "platforms_used": [
+          "TikTok",
+          "Streaming platforms"
+        ],
+        "innovation_level": "Medium",
+        "social_media_integration": "High"
+      },
+      "csr_purpose_elements": {
+        "csr_integrated": false,
+        "focus": "Cultural engagement rather than social cause"
+      },
+      "performance_metrics": {
+        "business_impact": {
+          "category_share": "Significant increases",
+          "share_of_voice": "Significant increases",
+          "website_traffic": "Significant organic increases",
+          "brand_consideration": "Significant increases"
+        }
+      },
+      "awards_recognition": {
+        "warc_effective_100": true
+      }
+    },
+    {
+      "case_id": "warc_009",
+      "warc_file_id": "135898_KFC_Michelin_Impossibl.pdf",
+      "campaign_identification": {
+        "campaign_name": "Michelin Impossible",
+        "brand": "KFC",
+        "parent_company": "Yum! Brands",
+        "publication_year": 2021,
+        "warc_source": "WARC Effective 100",
+        "industry_sector": "Fast Food/QSR",
+        "sub_category": "Quick Service Restaurant"
+      },
+      "market_context": {
+        "primary_market": "Australia",
+        "market_type": "Developed",
+        "target_audience": "Australian consumers",
+        "cultural_context": "Australians support underdog mentality"
+      },
+      "business_challenge": {
+        "primary_challenge": "Public dubious of food quality",
+        "market_situation": "Great taste perception but not quality perception",
+        "perception_gap": "Taste vs quality disconnect"
+      },
+      "campaign_objectives": {
+        "primary_objective": "Transform perceptions of food quality",
+        "secondary_objectives": [
+          "Win Michelin Star for remote restaurant",
+          "Generate positive conversation",
+          "Challenge quality perceptions"
+        ]
+      },
+      "strategy_execution": {
+        "core_strategy": "Win Michelin Star for world's most remote KFC",
+        "innovation_factor": "Michelin star pursuit for fast food",
+        "execution_elements": [
+          "Target world's most remote KFC (Australian outback)",
+          "Facebook campaign launch",
+          "Media amplification strategy",
+          "Underdog narrative"
+        ]
+      },
+      "creative_elements": {
+        "content_types": [
+          "Social Media Campaign",
+          "PR Campaign"
+        ],
+        "emotional_appeal": "High - underdog story",
+        "cultural_relevance": "High - Australian underdog mentality",
+        "brand_integration": "High - product quality focus"
+      },
+      "channels_media": {
+        "primary_channels": [
+          "Facebook",
+          "National/international media"
+        ],
+        "media_mix": "Social-led with earned amplification"
+      },
+      "technology_integration": {
+        "tech_enabled": false,
+        "innovation_level": "Low",
+        "social_media_focus": "Medium"
+      },
+      "csr_purpose_elements": {
+        "csr_integrated": false,
+        "focus": "Quality perception rather than social cause"
+      },
+      "performance_metrics": {
+        "reach_metrics": {
+          "conversation_increase": "633% increase in positive conversation"
+        },
+        "business_impact": {
+          "roi": "$91:1 ROI",
+          "brand_perception": "Significant quality perception improvement"
+        }
+      },
+      "awards_recognition": {
+        "warc_effective_100": true,
+        "roi_performance": "Exceptional $91:1 ROI"
+      },
+      "agency_credits": {
+        "creative_agency": "Ogilvy Sydney",
+        "key_personnel": [
+          "Toby Harrison, Ryan O'Connell - Contributors"
+        ]
+      }
+    },
+    {
+      "case_id": "warc_010",
+      "warc_file_id": "135897_DB_Export_Im_Drinking_It_For_Yo.pdf",
+      "campaign_identification": {
+        "campaign_name": "I'm Drinking It For You",
+        "brand": "DB Export",
+        "parent_company": "DB Breweries (Heineken)",
+        "publication_year": 2021,
+        "warc_source": "WARC Effective 100",
+        "industry_sector": "Alcohol/Beer",
+        "sub_category": "Low-Carb Beer"
+      },
+      "market_context": {
+        "primary_market": "New Zealand",
+        "market_type": "Developed",
+        "target_audience": "Beer drinkers and their partners",
+        "product_context": "Launch of Extra Low Carb beer"
+      },
+      "business_challenge": {
+        "primary_challenge": "Need cheaper low-carb alternative, compromising perception",
+        "market_situation": "Drinkers felt compromising by drinking low-carb beer",
+        "perception_issue": "Low-carb seen as sacrifice"
+      },
+      "campaign_objectives": {
+        "primary_objective": "Launch Extra Low Carb beer, challenge preconceptions",
+        "secondary_objectives": [
+          "Reframe low-carb as benefit to others",
+          "Drive trial",
+          "Position as selfless act"
+        ]
+      },
+      "strategy_execution": {
+        "core_strategy": "Valentine's Day launch with love song, 'beer bouquets'",
+        "innovation_factor": "Positioning consumption as selfless act",
+        "execution_elements": [
+          "Valentine's Day timing",
+          "Love song creation",
+          "Music video production",
+          "12-pack 'beer bouquets'",
+          "Experiential marketing"
+        ]
+      },
+      "creative_elements": {
+        "content_types": [
+          "Music",
+          "Music Video",
+          "Product Innovation",
+          "Experiential"
+        ],
+        "emotional_appeal": "High - love, sacrifice",
+        "cultural_relevance": "Medium - Valentine's Day",
+        "product_integration": "High - product as gift"
+      },
+      "channels_media": {
+        "primary_channels": [
+          "Multi-platform",
+          "Experiential"
+        ],
+        "media_mix": "Integrated multimedia approach"
+      },
+      "technology_integration": {
+        "tech_enabled": false,
+        "innovation_level": "Low",
+        "focus": "Creative messaging over tech"
+      },
+      "csr_purpose_elements": {
+        "csr_integrated": false,
+        "focus": "Relationship benefit rather than social cause"
+      },
+      "performance_metrics": {
+        "business_impact": {
+          "roi": "10.68:1 ROI",
+          "objective_achievement": "Exceeded all objectives"
+        }
+      },
+      "awards_recognition": {
+        "warc_effective_100": true,
+        "roi_performance": "Strong 10.68:1 ROI"
+      },
+      "agency_credits": {
+        "creative_agency": "Colenso BBDO Auckland",
+        "media_agency": "Carat Auckland",
+        "production": "Red Star Auckland"
+      }
+    },
+    {
+      "case_id": "warc_011",
+      "warc_file_id": "143434_Nike_Crazy_Dream.pdf",
+      "campaign_identification": {
+        "campaign_name": "Crazy Dreams",
+        "brand": "Nike",
+        "parent_company": "Nike Inc.",
+        "publication_year": 2022,
+        "warc_source": "WARC Effective 100",
+        "industry_sector": "Sportswear/Apparel",
+        "sub_category": "Athletic Footwear & Apparel"
+      },
+      "market_context": {
+        "primary_market": "Global",
+        "market_type": "Global/Developed",
+        "target_audience": "Athletes, sports fans, youth",
+        "cultural_context": "30th anniversary of 'Just Do It'"
+      },
+      "business_challenge": {
+        "primary_challenge": "Refresh 'Just Do It' for new generation",
+        "market_situation": "Need to prove core belief still inspirational",
+        "brand_challenge": "Maintain relevance of iconic tagline"
+      },
+      "campaign_objectives": {
+        "primary_objective": "Prove core belief still has power to inspire",
+        "secondary_objectives": [
+          "Refresh brand for new generation",
+          "Demonstrate conviction over conformity",
+          "Create cultural conversation"
+        ]
+      },
+      "strategy_execution": {
+        "core_strategy": "Stories of iconic athletes overcoming barriers",
+        "innovation_factor": "30th anniversary refresh with controversy",
+        "execution_elements": [
+          "Colin Kaepernick feature",
+          "Multiple athlete stories",
+          "Barrier-breaking narratives",
+          "Film production",
+          "Multi-platform amplification"
+        ]
+      },
+      "creative_elements": {
+        "content_types": [
+          "Film",
+          "Multiple platforms"
+        ],
+        "celebrity_endorsement": {
+          "featured": true,
+          "celebrity": "Colin Kaepernick, various athletes",
+          "role": "Brand ambassadors and story subjects"
+        },
+        "emotional_appeal": "Very High - inspiration, controversy",
+        "cultural_relevance": "Very High - social justice, sports"
+      },
+      "channels_media": {
+        "primary_channels": [
+          "Film",
+          "Multiple platforms"
+        ],
+        "media_mix": "Premium content with broad distribution"
+      },
+      "technology_integration": {
+        "tech_enabled": false,
+        "innovation_level": "Medium",
+        "focus": "Content and messaging over tech"
+      },
+      "csr_purpose_elements": {
+        "csr_integrated": true,
+        "csr_themes": [
+          "Social justice",
+          "Athlete rights",
+          "Standing for beliefs"
+        ],
+        "authenticity_level": "Very High",
+        "purpose_prominence": "Co-primary with brand message"
+      },
+      "performance_metrics": {
+        "business_impact": {
+          "stock_price": "Rose to all-time high",
+          "brand_value": "$6 billion brand value created",
+          "campaign_status": "Most successful campaign in brand history"
+        }
+      },
+      "awards_recognition": {
+        "warc_effective_100": true,
+        "business_impact": "Record-breaking performance",
+        "cultural_impact": "Significant social conversation"
+      }
+    },
+    {
+      "case_id": "warc_012",
+      "warc_file_id": "154838_Microsoft_Adlam_An_alphabet_to.pdf",
+      "campaign_identification": {
+        "campaign_name": "Adlam – An alphabet to preserve a culture",
+        "brand": "Microsoft",
+        "parent_company": "Microsoft Corporation",
+        "publication_year": 2024,
+        "warc_source": "WARC Awards for Effectiveness",
+        "industry_sector": "Technology",
+        "sub_category": "Software & Digital Services"
+      },
+      "market_context": {
+        "primary_market": "Middle East & Africa",
+        "market_type": "Developing/Mixed",
+        "target_audience": "Fulani people (60 million)",
+        "cultural_context": "Language preservation crisis"
+      },
+      "business_challenge": {
+        "primary_challenge": "90% of world's languages at risk of extinction",
+        "market_situation": "Fulani people lack alphabet or writing system",
+        "social_issue": "Cultural and linguistic preservation"
+      },
+      "campaign_objectives": {
+        "primary_objective": "Preserve Fulani language and culture, expand literacy access",
+        "secondary_objectives": [
+          "Launch ADLaM alphabet globally",
+          "Increase digital inclusion",
+          "Expand literacy access",
+          "Preserve cultural identity"
+        ]
+      },
+      "strategy_execution": {
+        "core_strategy": "Launch ADLaM alphabet across 1 billion devices",
+        "innovation_factor": "First digital alphabet preservation at scale",
+        "execution_elements": [
+          "Collaboration with alphabet creators",
+          "Microsoft 365 integration",
+          "Google Fonts distribution",
+          "Educational material development",
+          "Community partnership"
+        ]
+      },
+      "creative_elements": {
+        "content_types": [
+          "Digital platforms",
+          "Video",
+          "Educational materials"
+        ],
+        "emotional_appeal": "Very High - cultural identity",
+        "cultural_relevance": "Extremely High - language preservation",
+        "authenticity": "Very High - community collaboration"
+      },
+      "channels_media": {
+        "primary_channels": [
+          "Digital",
+          "Video",
+          "Educational materials"
+        ],
+        "media_mix": "Product integration + educational outreach"
+      },
+      "technology_integration": {
+        "tech_enabled": true,
+        "platforms_used": [
+          "Microsoft 365",
+          "Google Fonts",
+          "1 billion devices"
+        ],
+        "innovation_level": "Very High",
+        "digital_sophistication": "Very High"
+      },
+      "csr_purpose_elements": {
+        "csr_integrated": true,
+        "csr_themes": [
+          "Cultural preservation",
+          "Literacy",
+          "Digital inclusion"
+        ],
+        "authenticity_level": "Extremely High",
+        "purpose_prominence": "Primary campaign driver"
+      },
+      "performance_metrics": {
+        "reach_metrics": {
+          "device_reach": "1 billion devices",
+          "font_serves": "2.13M serves/week",
+          "student_increase": "30,000 new students"
+        },
+        "business_impact": {
+          "schools_opened": "Multiple ADLaM schools and centers",
+          "government_integration": "Guinean government curriculum integration",
+          "constitutional_recognition": "Mali adding ADLaM to constitution",
+          "roi_type": "Cultural impact (non-commercial ROI focus)"
+        }
+      },
+      "awards_recognition": {
+        "warc_awards": "Gold, Middle East & Africa, Cultural Impact, 2024",
+        "cultural_impact": "Extremely High"
+      },
+      "agency_credits": {
+        "creative_agency": "McCann New York",
+        "entrant_company": "McCann, USA"
+      }
+    },
+    {
+      "case_id": "warc_013",
+      "warc_file_id": "143436_Every_Kiwi_Vote_Counts_Meddle_in.pdf",
+      "campaign_identification": {
+        "campaign_name": "Meddle in the New Zealand Election",
+        "brand": "Every Kiwi Vote Counts",
+        "parent_company": "Independent non-partisan initiative",
+        "publication_year": 2022,
+        "warc_source": "WARC Effective 100",
+        "industry_sector": "Civic/Non-profit",
+        "sub_category": "Political Engagement"
+      },
+      "market_context": {
+        "primary_market": "New Zealand",
+        "market_type": "Developed",
+        "target_audience": "Overseas New Zealanders",
+        "political_context": "2020 national election"
+      },
+      "business_challenge": {
+        "primary_challenge": "Overseas New Zealanders believe votes don't matter",
+        "market_situation": "Low overseas voter participation",
+        "perception_issue": "Individual vote impact questioned"
+      },
+      "campaign_objectives": {
+        "primary_objective": "Increase overseas voter participation",
+        "secondary_objectives": [
+          "Overcome apathy about vote significance",
+          "Create urgency around election participation",
+          "Generate conversation about democratic participation"
+        ]
+      },
+      "strategy_execution": {
+        "core_strategy": "Enlist Russian national to encourage 'meddling' in election",
+        "innovation_factor": "Provocative 'foreign meddling' angle",
+        "execution_elements": [
+          "Russian spokesperson strategy",
+          "Social media campaign",
+          "Website integration",
+          "Press amplification"
+        ]
+      },
+      "creative_elements": {
+        "content_types": [
+          "Social Media Campaign",
+          "Website"
+        ],
+        "emotional_appeal": "Medium - civic duty",
+        "cultural_relevance": "High - election interference narrative",
+        "provocative_element": "High - foreign meddling concept"
+      },
+      "channels_media": {
+        "primary_channels": [
+          "Facebook",
+          "Instagram",
+          "Website"
+        ],
+        "media_mix": "Social-led with earned amplification"
+      },
+      "technology_integration": {
+        "tech_enabled": true,
+        "platforms_used": [
+          "Social media platforms"
+        ],
+        "innovation_level": "Medium",
+        "digital_focus": "High"
+      },
+      "csr_purpose_elements": {
+        "csr_integrated": true,
+        "csr_themes": [
+          "Democratic participation",
+          "Civic engagement"
+        ],
+        "authenticity_level": "High",
+        "purpose_prominence": "Primary campaign driver"
+      },
+      "performance_metrics": {
+        "reach_metrics": {
+          "social_reach": "250,000 combined reach on Facebook and Instagram"
+        },
+        "business_impact": {
+          "participation_increase": "Increased overseas participation",
+          "objective_achievement": "Succeeded in main objective"
+        }
+      },
+      "awards_recognition": {
+        "warc_effective_100": true,
+        "civic_impact": "Recognized for democratic engagement"
+      },
+      "agency_credits": {
+        "creative_agency": "Special Auckland",
+        "key_personnel": [
+          "Tony Bradbourne - CCO",
+          "Jonathan McMahon, Lisa Fedyszyn - Executive Creative Director"
+        ]
+      }
+    },
+    {
+      "case_id": "warc_014",
+      "warc_file_id": "159475_Heinz_It_Has_To_Be_Hein.pdf",
+      "campaign_identification": {
+        "campaign_name": "It Has To Be Heinz",
+        "brand": "Heinz",
+        "parent_company": "The Kraft Heinz Company",
+        "publication_year": 2025,
+        "warc_source": "WARC Effective 100",
+        "industry_sector": "FMCG/Food",
+        "sub_category": "Condiments & Sauces"
+      },
+      "market_context": {
+        "primary_market": "Canada",
+        "market_type": "Developed",
+        "target_audience": "Canadian consumers",
+        "competitive_context": "Restaurants using inferior ketchup in Heinz bottles"
+      },
+      "business_challenge": {
+        "primary_challenge": "Relevance declining, price increases, restaurants using inferior ketchup",
+        "market_situation": "Inflation and supply chain issues affecting pricing",
+        "quality_issue": "Brand dilution through inferior substitutions"
+      },
+      "campaign_objectives": {
+        "primary_objective": "Prove Heinz is the only real ketchup option",
+        "secondary_objectives": [
+          "Combat inferior substitutions",
+          "Maintain quality perception",
+          "Drive sales growth"
+        ]
+      },
+      "strategy_execution": {
+        "core_strategy": "Multiple campaigns: bottle angle, puzzle, petition, fashion stains, Super Bowl hack",
+        "innovation_factor": "Multi-campaign cultural conversation strategy",
+        "execution_elements": [
+          "31-degree bottle angle demonstration",
+          "570-piece puzzle for COVID entertainment",
+          "Hot dog/bun package petition",
+          "Fashion stains partnership",
+          "Super Bowl Roman numerals hack"
+        ]
+      },
+      "creative_elements": {
+        "content_types": [
+          "Multiple touchpoints",
+          "Cultural conversations"
+        ],
+        "emotional_appeal": "Medium - authenticity, quality",
+        "cultural_relevance": "High - Canadian food culture",
+        "brand_integration": "Very High - product features highlighted"
+      },
+      "channels_media": {
+        "primary_channels": [
+          "Multiple touchpoints",
+          "Cultural conversations"
+        ],
+        "media_mix": "Integrated cultural activation approach"
+      },
+      "technology_integration": {
+        "tech_enabled": false,
+        "innovation_level": "Medium",
+        "focus": "Cultural integration over technology"
+      },
+      "csr_purpose_elements": {
+        "csr_integrated": false,
+        "focus": "Quality and authenticity rather than social cause"
+      },
+      "performance_metrics": {
+        "reach_metrics": {
+          "media_impressions": "12.5+ billion"
+        },
+        "business_impact": {
+          "sales_growth": "12% globally",
+          "value_perception_lift": "3-point lift",
+          "consideration_lift": "3-point jump"
+        }
+      },
+      "awards_recognition": {
+        "warc_effective_100": true
+      },
+      "agency_credits": {
+        "creative_agency": "Rethink Toronto",
+        "media_agency": "Carat Chicago, Starcom Chicago"
+      }
+    },
+    {
+      "case_id": "warc_015",
+      "warc_file_id": "154953_McDonalds_Famous_Order.pdf",
+      "campaign_identification": {
+        "campaign_name": "Famous Orders",
+        "brand": "McDonald's",
+        "parent_company": "McDonald's Corporation",
+        "publication_year": 2024,
+        "warc_source": "WARC Effective 100",
+        "industry_sector": "Fast Food/QSR",
+        "sub_category": "Quick Service Restaurant"
+      },
+      "market_context": {
+        "primary_market": "United States",
+        "market_type": "Developed",
+        "target_audience": "Young, multicultural consumers",
+        "cultural_context": "Need to reassert cultural relevance"
+      },
+      "business_challenge": {
+        "primary_challenge": "Lost touch with young, multicultural consumers",
+        "market_situation": "Brand needed to reassert cultural cachet",
+        "competitive_context": "Competition for youth attention"
+      },
+      "campaign_objectives": {
+        "primary_objective": "Bring youth audience back, create growth engine",
+        "secondary_objectives": [
+          "Reassert cultural icon status",
+          "Leverage celebrity order insight",
+          "Create credible partnerships"
+        ]
+      },
+      "strategy_execution": {
+        "core_strategy": "Celebrity go-to orders as purchasable meals with content",
+        "innovation_factor": "Celebrity meal collaboration program",
+        "execution_elements": [
+          "Four celebrity partnerships",
+          "Genuine McDonald's fan selection",
+          "Go-to order productization",
+          "Content creation around each celebrity",
+          "Fanbase-specific activation"
+        ]
+      },
+      "creative_elements": {
+        "content_types": [
+          "Multiple platforms",
+          "Content marketing"
+        ],
+        "celebrity_endorsement": {
+          "featured": true,
+          "celebrity": "4 celebrities (genuine McDonald's fans)",
+          "role": "Menu collaborators"
+        },
+        "emotional_appeal": "High - celebrity connection, exclusivity",
+        "cultural_relevance": "High - celebrity culture, youth trends"
+      },
+      "channels_media": {
+        "primary_channels": [
+          "Multiple platforms",
+          "Content marketing"
+        ],
+        "media_mix": "Celebrity-driven content activation"
+      },
+      "technology_integration": {
+        "tech_enabled": true,
+        "platforms_used": [
+          "Digital ordering",
+          "Content platforms"
+        ],
+        "innovation_level": "Medium",
+        "digital_ordering_focus": "High"
+      },
+      "csr_purpose_elements": {
+        "csr_integrated": false,
+        "focus": "Cultural relevance rather than social cause"
+      },
+      "performance_metrics": {
+        "engagement_metrics": {
+          "youth_engagement": "High"
+        },
+        "business_impact": {
+          "monthly_sales_increase": "Average monthly sales to target increased",
+          "incremental_sales": "Hundreds of millions in incremental sales"
+        }
+      },
+      "awards_recognition": {
+        "warc_effective_100": true
+      },
+      "agency_credits": {
+        "creative_agency": "Wieden+Kennedy New York",
+        "additional_agencies": "Narrative Los Angeles, Alma DDB Miami, Burrell Chicago"
+      }
+    },
+    {
+      "case_id": "warc_016",
+      "warc_file_id": "154954_Partners_Life_Last_Performanc.pdf",
+      "campaign_identification": {
+        "campaign_name": "Last Performance",
+        "brand": "Partners Life",
+        "parent_company": "Partners Life",
+        "publication_year": 2024,
+        "warc_source": "WARC Effective 100",
+        "industry_sector": "Insurance",
+        "sub_category": "Life Insurance"
+      },
+      "market_context": {
+        "primary_market": "New Zealand",
+        "market_type": "Developed",
+        "target_audience": "New Zealand consumers",
+        "distribution_context": "1,700 independent advisors network"
+      },
+      "business_challenge": {
+        "primary_challenge": "Communicate importance of life insurance",
+        "market_situation": "Reliance on advisor network for sales",
+        "communication_challenge": "Making insurance relevant and urgent"
+      },
+      "campaign_objectives": {
+        "primary_objective": "Increase consideration, awareness and enquiries",
+        "secondary_objectives": [
+          "Demonstrate unexpected death risk",
+          "Support advisor network",
+          "Make insurance tangible and relevant"
+        ]
+      },
+      "strategy_execution": {
+        "core_strategy": "Use 'hindsight of the dead' via Brokenwood Mysteries partnership",
+        "innovation_factor": "TV show partnership for insurance messaging",
+        "execution_elements": [
+          "Partnership with murder mystery show",
+          "Murdered characters as spokespeople",
+          "Episode-based insurance messaging",
+          "Hindsight perspective on death consequences"
+        ]
+      },
+      "creative_elements": {
+        "content_types": [
+          "TV partnership",
+          "Digital campaign"
+        ],
+        "emotional_appeal": "High - mortality, family protection",
+        "cultural_relevance": "High - popular local TV show",
+        "unique_angle": "Murdered characters as insurance advocates"
+      },
+      "channels_media": {
+        "primary_channels": [
+          "TV",
+          "Digital"
+        ],
+        "media_mix": "TV-led with digital amplification"
+      },
+      "technology_integration": {
+        "tech_enabled": false,
+        "innovation_level": "Low",
+        "focus": "Content partnership over technology"
+      },
+      "csr_purpose_elements": {
+        "csr_integrated": false,
+        "focus": "Family financial protection rather than social cause"
+      },
+      "performance_metrics": {
+        "business_impact": {
+          "brand_awareness_increase": "5%",
+          "brand_consideration_increase": "5%",
+          "website_enquiries_increase": "70%"
+        }
+      },
+      "awards_recognition": {
+        "warc_effective_100": true
+      },
+      "agency_credits": {
+        "creative_agency": "Special Auckland",
+        "key_personnel": [
+          "Tony Bradbourne - Founder & CEO/CCO",
+          "Jonathan McMahon, Lisa Fedyszyn - Executive Creative Director"
+        ]
+      }
+    },
+    {
+      "case_id": "warc_017",
+      "warc_file_id": "154955_Whisper_Keep_Girls_In_Schoo.pdf",
+      "campaign_identification": {
+        "campaign_name": "Keep Girls In School",
+        "brand": "Whisper",
+        "parent_company": "Procter & Gamble",
+        "publication_year": 2024,
+        "warc_source": "WARC Effective 100",
+        "industry_sector": "FMCG/Personal Care",
+        "sub_category": "Feminine Care"
+      },
+      "market_context": {
+        "primary_market": "India",
+        "market_type": "Emerging",
+        "target_audience": "Young girls and government",
+        "social_context": "Millions of girls dropping out of school due to periods"
+      },
+      "business_challenge": {
+        "primary_challenge": "Girls dropping out of school when periods start",
+        "market_situation": "Category in decline, social taboos around menstruation",
+        "educational_gap": "Mothers unable to help daughters understand periods"
+      },
+      "campaign_objectives": {
+        "primary_objective": "Make menstruation part of national curriculum",
+        "secondary_objectives": [
+          "Educate about periods",
+          "Lobby government for curriculum change",
+          "Break menstruation taboos"
+        ]
+      },
+      "strategy_execution": {
+        "core_strategy": "Create 'Missing Chapter' content and lobby for curriculum inclusion",
+        "innovation_factor": "Educational content + government lobbying",
+        "execution_elements": [
+          "Missing Chapter educational content",
+          "Government lobbying",
+          "Video and social media promotion",
+          "Three-year #KeepGirlsInSchool platform"
+        ]
+      },
+      "creative_elements": {
+        "content_types": [
+          "Educational content",
+          "Video",
+          "Social media"
+        ],
+        "emotional_appeal": "High - education, empowerment",
+        "cultural_relevance": "Very High - addressing social taboos",
+        "educational_focus": "Primary - teaching tool creation"
+      },
+      "channels_media": {
+        "primary_channels": [
+          "Video",
+          "Social media",
+          "Government lobbying"
+        ],
+        "media_mix": "Educational content + advocacy"
+      },
+      "technology_integration": {
+        "tech_enabled": false,
+        "innovation_level": "Low",
+        "focus": "Educational content over technology"
+      },
+      "csr_purpose_elements": {
+        "csr_integrated": true,
+        "csr_themes": [
+          "Education",
+          "Gender equality",
+          "Health education"
+        ],
+        "authenticity_level": "Very High",
+        "purpose_prominence": "Primary campaign driver"
+      },
+      "performance_metrics": {
+        "business_impact": {
+          "business_growth": "5% at time when category declining",
+          "curriculum_integration": "Government adopted content",
+          "educational_impact": "Curriculum change achieved"
+        }
+      },
+      "awards_recognition": {
+        "warc_effective_100": true,
+        "social_impact": "High recognition for educational change"
+      },
+      "agency_credits": {
+        "creative_agency": "Leo Burnett Mumbai",
+        "media_agency": "EssenceMediacom Mumbai"
+      }
+    },
+    {
+      "case_id": "warc_018",
+      "warc_file_id": "154956_AHR_Valley_Wine_Region_Flutwein_.pdf",
+      "campaign_identification": {
+        "campaign_name": "#Flutwein - Our Worst Vintage",
+        "brand": "AHR Valley Wine Region",
+        "parent_company": "Regional Wine Association",
+        "publication_year": 2024,
+        "warc_source": "WARC Effective 100",
+        "industry_sector": "Wine/Alcohol",
+        "sub_category": "Regional Wine/Disaster Relief"
+      },
+      "market_context": {
+        "primary_market": "Germany",
+        "market_type": "Developed",
+        "target_audience": "German wine consumers and donors",
+        "crisis_context": "2021 flooding disaster in Ahrweiler region"
+      },
+      "business_challenge": {
+        "primary_challenge": "2021 flooding destroyed largest red wine region in Germany",
+        "market_situation": "Widespread flooding damage to wineries",
+        "recovery_need": "Fundraising for damaged wine region"
+      },
+      "campaign_objectives": {
+        "primary_objective": "Increase donations and awareness about flooding damage",
+        "secondary_objectives": [
+          "Raise funds for damaged areas",
+          "Create awareness about wine region",
+          "Turn disaster into opportunity"
+        ]
+      },
+      "strategy_execution": {
+        "core_strategy": "Brand and sell flood-rescued wine bottles",
+        "innovation_factor": "Disaster recovery through product sale",
+        "execution_elements": [
+          "Rescued wine bottle branding",
+          "Crowdfunding campaign",
+          "TV advertising",
+          "OOH media partnership",
+          "High visibility launch"
+        ]
+      },
+      "creative_elements": {
+        "content_types": [
+          "Product branding",
+          "TV",
+          "OOH"
+        ],
+        "emotional_appeal": "High - disaster recovery, community support",
+        "cultural_relevance": "Very High - regional German wine culture",
+        "authenticity": "Very High - real flood-damaged wine"
+      },
+      "channels_media": {
+        "primary_channels": [
+          "TV",
+          "OOH",
+          "Crowdfunding platform"
+        ],
+        "media_mix": "Traditional media + crowdfunding",
+        "media_partnerships": "Media partners provided OOH space"
+      },
+      "technology_integration": {
+        "tech_enabled": true,
+        "platforms_used": [
+          "Crowdfunding platform"
+        ],
+        "innovation_level": "Medium",
+        "digital_integration": "Crowdfunding focus"
+      },
+      "csr_purpose_elements": {
+        "csr_integrated": true,
+        "csr_themes": [
+          "Disaster relief",
+          "Community support",
+          "Regional recovery"
+        ],
+        "authenticity_level": "Extremely High",
+        "purpose_prominence": "Primary campaign driver"
+      },
+      "performance_metrics": {
+        "reach_metrics": {
+          "awareness": "44.4% of Germans aged 18-59 aware"
+        },
+        "business_impact": {
+          "donations_raised": "€4.4m in 6 weeks",
+          "campaign_speed": "6-week timeline",
+          "media_coverage": "Significant earned media"
+        }
+      },
+      "awards_recognition": {
+        "warc_effective_100": true,
+        "disaster_relief": "Recognized for innovative disaster response"
+      },
+      "agency_credits": {
+        "creative_agency": "Seven.One AdFactory Munich",
+        "key_personnel": [
+          "Tom Schwarz - Managing Director/Creative Director",
+          "Daniel Koller - Creative Director/Director Strategy"
+        ]
+      }
+    },
+    {
+      "case_id": "warc_019",
+      "warc_file_id": "159468_Dove_The_Cost_of_Beaut.pdf",
+      "campaign_identification": {
+        "campaign_name": "The Cost of Beauty",
+        "brand": "Dove",
+        "parent_company": "Unilever",
+        "publication_year": 2025,
+        "warc_source": "WARC Effective 100",
+        "industry_sector": "FMCG/Personal Care",
+        "sub_category": "Beauty & Personal Care"
+      },
+      "market_context": {
+        "primary_market": "United States",
+        "market_type": "Developed",
+        "target_audience": "American society, especially young girls",
+        "social_context": "Body dissatisfaction and appearance discrimination epidemic"
+      },
+      "business_challenge": {
+        "primary_challenge": "Silent public health epidemic of body dissatisfaction",
+        "market_situation": "Appearance-based discrimination affecting mental health",
+        "social_issue": "Women's bodies subject to constant scrutiny and violence"
+      },
+      "campaign_objectives": {
+        "primary_objective": "Realize appearance discrimination is public health epidemic",
+        "secondary_objectives": [
+          "Reframe as 'code red' issue",
+          "Highlight economic and emotional costs",
+          "Drive policy/societal change"
+        ]
+      },
+      "strategy_execution": {
+        "core_strategy": "Real Cost of Beauty Ideals study with multi-platform activation",
+        "innovation_factor": "Research-driven public health framing",
+        "execution_elements": [
+          "Five young people sharing experiences",
+          "Long-form video content",
+          "Two-page New York Times ad",
+          "Social media assets",
+          "Custom digital experience"
+        ]
+      },
+      "creative_elements": {
+        "content_types": [
+          "Research study",
+          "Long-form video",
+          "Print ad",
+          "Social media",
+          "Digital experience"
+        ],
+        "emotional_appeal": "Very High - mental health, self-esteem",
+        "cultural_relevance": "Very High - body image issues",
+        "authenticity": "Very High - real personal stories"
+      },
+      "channels_media": {
+        "primary_channels": [
+          "Long-form video",
+          "New York Times",
+          "Social media",
+          "Digital experience"
+        ],
+        "media_mix": "Premium content + earned amplification"
+      },
+      "technology_integration": {
+        "tech_enabled": true,
+        "platforms_used": [
+          "Custom digital experience",
+          "Social media"
+        ],
+        "innovation_level": "Medium",
+        "digital_experience": "Custom platform creation"
+      },
+      "csr_purpose_elements": {
+        "csr_integrated": true,
+        "csr_themes": [
+          "Mental health",
+          "Body positivity",
+          "Public health"
+        ],
+        "authenticity_level": "Extremely High",
+        "purpose_prominence": "Primary campaign driver"
+      },
+      "performance_metrics": {
+        "reach_metrics": {
+          "estimated_reach": "1.9 billion",
+          "media_coverage": "104 media outlets"
+        },
+        "business_impact": {
+          "brand_power_lift": "19-point lift",
+          "cultural_impact": "Public health conversation initiated"
+        }
+      },
+      "awards_recognition": {
+        "warc_effective_100": true,
+        "social_impact": "High recognition for public health advocacy"
+      },
+      "agency_credits": {
+        "creative_agency": "Ogilvy London, Ogilvy Toronto",
+        "media_agency": "Mindshare New York"
+      }
+    },
+    {
+      "case_id": "warc_020",
+      "warc_file_id": "159470_Mayor_of_London_Breaking_the_Sil.pdf",
+      "campaign_identification": {
+        "campaign_name": "Breaking the Silence",
+        "brand": "Mayor of London",
+        "parent_company": "Greater London Authority",
+        "publication_year": 2025,
+        "warc_source": "WARC Effective 100",
+        "industry_sector": "Government/Public Service",
+        "sub_category": "Social Awareness Campaign"
+      },
+      "market_context": {
+        "primary_market": "London, UK",
+        "market_type": "Developed",
+        "target_audience": "18-34 year old men",
+        "social_context": "Violence against women and girls crisis"
+      },
+      "business_challenge": {
+        "primary_challenge": "Male violence against women starts with words, progresses to murder",
+        "market_situation": "One woman dies every three days at hands of a man",
+        "behavioral_barrier": "Friendship stronger than desire to stop misogyny"
+      },
+      "campaign_objectives": {
+        "primary_objective": "Increase belief that misogyny is big issue and intervention confidence",
+        "secondary_objectives": [
+          "Break the silence on misogyny",
+          "Increase willingness to intervene",
+          "Provide tools for men to challenge friends"
+        ]
+      },
+      "strategy_execution": {
+        "core_strategy": "Interactive film with comedian introducing new word as intervention tool",
+        "innovation_factor": "Interactive film with 270 possible outcomes",
+        "execution_elements": [
+          "Romesh Ranganathan introduction",
+          "New word creation for men",
+          "Interactive film technology",
+          "270 possible outcomes",
+          "Behavioral reflection prompts"
+        ]
+      },
+      "creative_elements": {
+        "content_types": [
+          "Interactive film",
+          "Behavioral intervention tool"
+        ],
+        "celebrity_endorsement": {
+          "featured": true,
+          "celebrity": "Romesh Ranganathan",
+          "role": "Comedian introducing intervention tool"
+        },
+        "emotional_appeal": "High - social responsibility, friendship",
+        "cultural_relevance": "Very High - UK male culture and behavior"
+      },
+      "channels_media": {
+        "primary_channels": [
+          "Interactive film",
+          "Digital platforms"
+        ],
+        "media_mix": "Digital-first with earned amplification"
+      },
+      "technology_integration": {
+        "tech_enabled": true,
+        "platforms_used": [
+          "Interactive film technology"
+        ],
+        "innovation_level": "High",
+        "digital_sophistication": "High - 270 outcome possibilities"
+      },
+      "csr_purpose_elements": {
+        "csr_integrated": true,
+        "csr_themes": [
+          "Violence prevention",
+          "Gender equality",
+          "Behavioral change"
+        ],
+        "authenticity_level": "Very High",
+        "purpose_prominence": "Primary campaign driver"
+      },
+      "performance_metrics": {
+        "business_impact": {
+          "misogyny_awareness_lift": "21% lift in men seeing misogyny as big issue",
+          "confidence_increase": "45% increase in confidence to intervene",
+          "willingness_uplift": "11% uplift in willingness to intervene"
+        }
+      },
+      "awards_recognition": {
+        "warc_effective_100": true,
+        "social_impact": "High recognition for behavioral change"
+      },
+      "agency_credits": {
+        "creative_agency": "Ogilvy London",
+        "media_agency": "Wavemaker London"
+      }
+    },
+    {
+      "case_id": "warc_021",
+      "warc_file_id": "159471_Football_Australia_Til_Its_Don.pdf",
+      "campaign_identification": {
+        "campaign_name": "Til It's Done",
+        "brand": "Football Australia",
+        "parent_company": "Football Australia",
+        "publication_year": 2025,
+        "warc_source": "WARC Effective 100",
+        "industry_sector": "Sports Organization",
+        "sub_category": "Women's Sports Advocacy"
+      },
+      "market_context": {
+        "primary_market": "Australia",
+        "market_type": "Developed",
+        "target_audience": "Australian public and government",
+        "sports_context": "2023 World Cup held in Australia"
+      },
+      "business_challenge": {
+        "primary_challenge": "Struggling to secure sufficient government funding for women's football team",
+        "market_situation": "Matildas (women's team) underfunded compared to men's team",
+        "opportunity": "2023 World Cup in Australia as platform"
+      },
+      "campaign_objectives": {
+        "primary_objective": "Secure additional government funding for women's football",
+        "secondary_objectives": [
+          "Capture public attention during World Cup",
+          "Document quest for equality",
+          "Provide rallying cry for women's football support"
+        ]
+      },
+      "strategy_execution": {
+        "core_strategy": "Document Matildas' quest for equality during World Cup",
+        "innovation_factor": "Using World Cup momentum for funding advocacy",
+        "execution_elements": [
+          "Emotional television commercial",
+          "Mass OOH coverage",
+          "Team achievements visual sharing",
+          "Digital and print amplification"
+        ]
+      },
+      "creative_elements": {
+        "content_types": [
+          "TV commercial",
+          "OOH",
+          "Digital content",
+          "Print media"
+        ],
+        "emotional_appeal": "High - equality, achievement, recognition",
+        "cultural_relevance": "Very High - Australian sports culture",
+        "timing": "World Cup momentum leverage"
+      },
+      "channels_media": {
+        "primary_channels": [
+          "TV",
+          "OOH",
+          "Digital",
+          "Print"
+        ],
+        "media_mix": "Integrated traditional and digital approach"
+      },
+      "technology_integration": {
+        "tech_enabled": false,
+        "innovation_level": "Low",
+        "focus": "Content and timing over technology"
+      },
+      "csr_purpose_elements": {
+        "csr_integrated": true,
+        "csr_themes": [
+          "Gender equality",
+          "Sports equality",
+          "Fair funding"
+        ],
+        "authenticity_level": "Very High",
+        "purpose_prominence": "Primary campaign driver"
+      },
+      "performance_metrics": {
+        "reach_metrics": {
+          "recall_rate": "61% average recall across all activity"
+        },
+        "business_impact": {
+          "government_funding_increase": "7% annual increase",
+          "objective_achievement": "Primary objective achieved"
+        }
+      },
+      "awards_recognition": {
+        "warc_effective_100": true,
+        "sports_advocacy": "Recognized for successful advocacy"
+      },
+      "agency_credits": {
+        "creative_agency": "Ogilvy Melbourne"
+      }
+    },
+    {
+      "case_id": "warc_022",
+      "warc_file_id": "143437_Burger_King_Moldy_Whoppe.pdf",
+      "campaign_identification": {
+        "campaign_name": "Moldy Whopper",
+        "brand": "Burger King",
+        "parent_company": "Restaurant Brands International",
+        "publication_year": 2022,
+        "warc_source": "WARC Effective 100",
+        "industry_sector": "Fast Food/QSR",
+        "sub_category": "Quick Service Restaurant"
+      },
+      "market_context": {
+        "primary_market": "United States and global",
+        "market_type": "Developed/Global",
+        "target_audience": "Global consumers demanding clean food",
+        "industry_context": "Fast food industry under pressure for clean ingredients"
+      },
+      "business_challenge": {
+        "primary_challenge": "People demanded clean food, stark contrast to fast food industry",
+        "market_situation": "Need to announce removal of preservatives",
+        "competitive_context": "Fast food struggling with health perceptions"
+      },
+      "campaign_objectives": {
+        "primary_objective": "Announce no longer adding preservatives to show commitment",
+        "secondary_objectives": [
+          "Increase sales",
+          "Improve quality ingredients perception",
+          "Generate massive awareness"
+        ]
+      },
+      "strategy_execution": {
+        "core_strategy": "Counterintuitive campaign showing burger deterioration",
+        "innovation_factor": "Showing product decay as quality proof",
+        "execution_elements": [
+          "Time-lapse video of Whopper deteriorating",
+          "OOH campaign",
+          "Print advertising",
+          "Global rollout"
+        ]
+      },
+      "creative_elements": {
+        "content_types": [
+          "Time-lapse video",
+          "OOH",
+          "Print"
+        ],
+        "emotional_appeal": "Medium - authenticity, health",
+        "visual_impact": "Very High - shocking decay imagery",
+        "counterintuitive": "High - showing negative as positive"
+      },
+      "channels_media": {
+        "primary_channels": [
+          "Video",
+          "OOH",
+          "Print"
+        ],
+        "media_mix": "Video-led with traditional support"
+      },
+      "technology_integration": {
+        "tech_enabled": false,
+        "innovation_level": "Low",
+        "focus": "Creative execution over technology"
+      },
+      "csr_purpose_elements": {
+        "csr_integrated": true,
+        "csr_themes": [
+          "Health",
+          "Clean eating",
+          "Food transparency"
+        ],
+        "authenticity_level": "High",
+        "purpose_prominence": "Co-primary with business message"
+      },
+      "performance_metrics": {
+        "reach_metrics": {
+          "impressions": "8.4 billion"
+        },
+        "business_impact": {
+          "sales_increase": "14%",
+          "quality_perception_increase": "26%",
+          "global_reach": "US and worldwide impact"
+        }
+      },
+      "awards_recognition": {
+        "warc_effective_100": true,
+        "creative_recognition": "High for counterintuitive approach"
+      },
+      "agency_credits": {
+        "creative_agency": "INGO Stockholm, DAVID Miami, Publicis Bucharest",
+        "key_personnel": [
+          "Eduardo Marcues, Jorg Riommi - CCO",
+          "Ivan Montebello, Sergio Takhata - Art Director"
+        ]
+      }
+    },
+    {
+      "case_id": "warc_023",
+      "warc_file_id": "149662_Michelob_Ultra_Contract_for_Chan.pdf",
+      "campaign_identification": {
+        "campaign_name": "Contract for Change",
+        "brand": "Michelob Ultra",
+        "parent_company": "Anheuser-Busch InBev",
+        "publication_year": 2023,
+        "warc_source": "WARC Effective 100",
+        "industry_sector": "Alcohol/Beer",
+        "sub_category": "Premium Beer"
+      },
+      "market_context": {
+        "primary_market": "United States",
+        "market_type": "Developed",
+        "target_audience": "US farmers and beer consumers",
+        "agricultural_context": "Pressure on farmers to use pesticides and chemicals"
+      },
+      "business_challenge": {
+        "primary_challenge": "Farmers under pressure to use pesticides, herbicides and fertilizers",
+        "market_situation": "Organic crops more expensive, fewer buyers willing to pay",
+        "supply_chain_issue": "Need for organic barley for beer production"
+      },
+      "campaign_objectives": {
+        "primary_objective": "Encourage more farmers to go organic",
+        "secondary_objectives": [
+          "Create America's first nationally distributed organic beer",
+          "Remove barriers for organic transition",
+          "Support sustainable farming"
+        ]
+      },
+      "strategy_execution": {
+        "core_strategy": "Promise to buy farmers' organic produce as first customer",
+        "innovation_factor": "Contract guarantee for organic transition",
+        "execution_elements": [
+          "Contract for Change program",
+          "Commitment to be first organic customer",
+          "Transition support for farmers",
+          "Michelob ULTRA Pure Gold beer creation"
+        ]
+      },
+      "creative_elements": {
+        "content_types": [
+          "Program launch",
+          "Partnership content"
+        ],
+        "emotional_appeal": "High - farmer support, environmental benefit",
+        "authenticity": "Very High - real business commitment",
+        "b2b_focus": "High - farmer-focused messaging"
+      },
+      "channels_media": {
+        "primary_channels": [
+          "Direct farmer outreach",
+          "Agricultural community"
+        ],
+        "media_mix": "B2B focus with consumer awareness"
+      },
+      "technology_integration": {
+        "tech_enabled": false,
+        "innovation_level": "Low",
+        "focus": "Business partnership over technology"
+      },
+      "csr_purpose_elements": {
+        "csr_integrated": true,
+        "csr_themes": [
+          "Environmental sustainability",
+          "Organic farming",
+          "Farmer support"
+        ],
+        "authenticity_level": "Extremely High",
+        "purpose_prominence": "Primary campaign driver"
+      },
+      "performance_metrics": {
+        "business_impact": {
+          "farmers_signed": "175 farmers by end of 2021",
+          "organic_farmland": "100,000+ acres newly organic",
+          "product_achievement": "First nationally distributed organic beer"
+        }
+      },
+      "awards_recognition": {
+        "warc_effective_100": true,
+        "sustainability": "Recognized for environmental impact"
+      },
+      "agency_credits": {
+        "creative_agency": "FCB Chicago, FCB New York"
+      }
+    },
+    {
+      "case_id": "warc_024",
+      "warc_file_id": "140162_Cheetos_Cant_Touch_Thi.pdf",
+      "campaign_identification": {
+        "campaign_name": "Can't Touch This",
+        "brand": "Cheetos",
+        "parent_company": "PepsiCo (Frito-Lay)",
+        "publication_year": 2021,
+        "warc_source": "WARC Effective 100",
+        "industry_sector": "FMCG/Snacks",
+        "sub_category": "Corn Puffs & Snacks"
+      },
+      "market_context": {
+        "primary_market": "United States",
+        "market_type": "Developed",
+        "target_audience": "Cheetos consumers and popcorn buyers",
+        "product_context": "Launch of Cheetos Popcorn product"
+      },
+      "business_challenge": {
+        "primary_challenge": "Popcorn perceived as 'on the go' snack, Cheetos dust seen as barrier",
+        "market_situation": "Need to drive household penetration with new product",
+        "competitive_context": "Breaking into established popcorn category"
+      },
+      "campaign_objectives": {
+        "primary_objective": "Disrupt popcorn category and drive household penetration",
+        "secondary_objectives": [
+          "Launch Cheetos Popcorn successfully",
+          "Reframe Cheetos dust as positive",
+          "Connect with rejuvenile mindset"
+        ]
+      },
+      "strategy_execution": {
+        "core_strategy": "Position Cheetos dust as superpower for avoiding unwelcome tasks",
+        "innovation_factor": "Turning product 'flaw' into feature",
+        "execution_elements": [
+          "Rejuvenile consumer insight",
+          "Dust as mischief enabler",
+          "Excuse for avoiding tasks",
+          "Popcorn category disruption"
+        ]
+      },
+      "creative_elements": {
+        "content_types": [
+          "Video campaign",
+          "Product positioning"
+        ],
+        "emotional_appeal": "High - mischief, fun, rebellion",
+        "cultural_relevance": "High - rejuvenile mindset",
+        "product_integration": "Very High - dust as hero"
+      },
+      "channels_media": {
+        "primary_channels": [
+          "Video campaign",
+          "Multi-platform"
+        ],
+        "media_mix": "Video-led campaign"
+      },
+      "technology_integration": {
+        "tech_enabled": false,
+        "innovation_level": "Low",
+        "focus": "Creative insight over technology"
+      },
+      "csr_purpose_elements": {
+        "csr_integrated": false,
+        "focus": "Fun and mischief rather than social cause"
+      },
+      "performance_metrics": {
+        "business_impact": {
+          "popcorn_growth_share": "75% of ready-to-eat popcorn growth in 2020",
+          "household_penetration_lift": "1.4pt lift"
+        }
+      },
+      "awards_recognition": {
+        "warc_effective_100": true,
+        "creative_insight": "Recognized for turning negative into positive"
+      },
+      "agency_credits": {
+        "creative_agency": "Goodby Silverstein & Partners San Francisco",
+        "key_personnel": [
+          "Margaret Johnson - Chief Creative Officer",
+          "David Suarez - Executive Creative Director"
+        ]
+      }
+    },
+    {
+      "case_id": "warc_025",
+      "warc_file_id": "154952_Cadbury_Shah_Rukh_KhanMyA_v2.pdf",
+      "campaign_identification": {
+        "campaign_name": "Shah Rukh Khan-My-Ad (2024 Version)",
+        "brand": "Cadbury Celebrations",
+        "parent_company": "Mondelez International",
+        "publication_year": 2024,
+        "warc_source": "WARC Effective 100",
+        "industry_sector": "FMCG/Confectionery",
+        "sub_category": "Chocolate & Confectionery"
+      },
+      "market_context": {
+        "primary_market": "India",
+        "market_type": "Emerging",
+        "target_audience": "Indian families and local store owners",
+        "audience_demographics": {
+          "primary": "Indian consumers across age groups",
+          "geographic_focus": "Pan-India with hyper-local store targeting"
+        }
+      },
+      "business_challenge": {
+        "primary_challenge": "COVID impact, inflation, shift to e-commerce threatening local stores",
+        "market_situation": "Small retailers struggling against online giants like Amazon",
+        "competitive_context": "Need to support local business ecosystem while growing brand"
+      },
+      "campaign_objectives": {
+        "primary_objective": "Support local stores while growing mental availability",
+        "secondary_objectives": [
+          "Generate user-created content at scale",
+          "Increase brand consideration and sales",
+          "Strengthen community connections"
+        ]
+      },
+      "strategy_execution": {
+        "core_strategy": "Hyper-personalized ads with Shah Rukh Khan for thousands of stores",
+        "innovation_factor": "AI-powered personalization at unprecedented scale",
+        "execution_elements": [
+          "130k unique personalized video ads",
+          "Shah Rukh Khan mentioning specific store names",
+          "User-generated content platform",
+          "YouTube and Meta amplification",
+          "Geo-targeted delivery system"
+        ]
+      },
+      "creative_elements": {
+        "content_types": [
+          "Personalized Video Ads",
+          "Interactive Platform",
+          "UGC Campaign"
+        ],
+        "celebrity_endorsement": {
+          "featured": true,
+          "celebrity": "Shah Rukh Khan",
+          "role": "Brand ambassador for local stores"
+        },
+        "emotional_appeal": "High - community support, local pride",
+        "cultural_relevance": "Very High - Bollywood star supporting neighborhood stores",
+        "personalization_level": "Extreme - 130k unique versions"
+      },
+      "channels_media": {
+        "primary_channels": [
+          "YouTube",
+          "Meta (Facebook/Instagram)",
+          "Brand website"
+        ],
+        "media_mix": "Digital-first with social amplification",
+        "personalization_level": "Hyper-personalized at store level"
+      },
+      "technology_integration": {
+        "tech_enabled": true,
+        "platforms_used": [
+          "AI personalization engine",
+          "Video generation technology",
+          "Geo-targeting"
+        ],
+        "innovation_level": "Very High - mass personalization",
+        "digital_sophistication": "Very High"
+      },
+      "csr_purpose_elements": {
+        "csr_integrated": true,
+        "csr_themes": [
+          "Supporting local businesses",
+          "Community commerce",
+          "Economic empowerment"
+        ],
+        "authenticity_level": "High",
+        "purpose_prominence": "Co-primary with brand messaging"
+      },
+      "performance_metrics": {
+        "reach_metrics": {
+          "total_impressions": "1.4M impressions",
+          "generated_videos": "130k unique videos created",
+          "user_participation": "High engagement rates"
+        },
+        "engagement_metrics": {
+          "organic_mentions": "11k positive organic mentions",
+          "user_generated_content": "130k personalized videos",
+          "social_sharing": "Significant viral spread"
+        },
+        "business_impact": {
+          "sales_uplift": "35% sales increase",
+          "consideration_increase": "7.3% lift in brand consideration",
+          "roi_reported": "Significant positive ROI",
+          "local_store_impact": "Measurable support to local retailers"
+        }
+      },
+      "awards_recognition": {
+        "warc_effective_100": true,
+        "effectiveness_rating": "High for personalization innovation",
+        "industry_recognition": "Recognized for AI-powered creativity"
+      },
+      "agency_credits": {
+        "creative_agency": "Ogilvy Mumbai",
+        "media_agency": "Wavemaker Mumbai",
+        "key_personnel": [
+          "Sukesh Nayak - Chief Creative Officer, India",
+          "Hemant Sharma - Group Creative Director",
+          "Harshad Rajadhyaksha - Chief Creative Officer",
+          "Kainaz Karmakar - Chief Creative Officer",
+          "Ganapathy Balagopalan - Head of Strategic Planning"
+        ]
+      },
+      "cultural_relevance": {
+        "cultural_context": "Very High - leveraging Bollywood celebrity culture",
+        "local_adaptation": "Extreme - store-level personalization",
+        "global_scalability": "Medium - requires local celebrity and infrastructure"
+      }
+    }
+  ]
+}

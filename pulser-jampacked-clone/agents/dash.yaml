@@ -1,0 +1,192 @@
+name: dash
+version: "1.0.0"
+description: Dashboard visualization agent for creative analytics
+category: visualization
+status: production
+backend: python
+
+capabilities:
+  - real_time_dashboards
+  - interactive_visualizations
+  - performance_tracking
+  - comparative_analysis
+  - export_reports
+
+actions:
+  render_analysis_dashboard:
+    description: Create comprehensive creative analysis dashboard
+    inputs:
+      analysis_results:
+        type: object
+        required: true
+      performance_forecast:
+        type: object
+        required: true
+      optimization_suggestions:
+        type: array
+        required: true
+      award_predictions:
+        type: object
+        required: false
+    outputs:
+      dashboard_url:
+        type: string
+      dashboard_id:
+        type: string
+      export_formats:
+        type: array
+        items:
+          type: string
+          enum: [pdf, pptx, xlsx, json]
+    
+  create_performance_tracker:
+    description: Real-time performance monitoring dashboard
+    inputs:
+      campaign_id:
+        type: string
+        required: true
+      metrics:
+        type: array
+        required: true
+      refresh_interval:
+        type: number
+        default: 300
+    outputs:
+      tracker_url:
+        type: string
+      websocket_endpoint:
+        type: string
+    
+  generate_comparison_view:
+    description: Multi-campaign comparative analysis
+    inputs:
+      campaign_ids:
+        type: array
+        required: true
+      comparison_metrics:
+        type: array
+        required: true
+      time_range:
+        type: object
+        required: false
+    outputs:
+      comparison_url:
+        type: string
+      insights:
+        type: array
+
+dashboard_components:
+  effectiveness_radar:
+    type: radar_chart
+    dimensions:
+      - visual_complexity
+      - message_clarity
+      - brand_prominence
+      - emotional_resonance
+      - cultural_relevance
+      - innovation_level
+    
+  performance_timeline:
+    type: line_chart
+    metrics:
+      - impressions
+      - engagement_rate
+      - conversion_rate
+      - brand_recall
+    time_granularity: [hourly, daily, weekly]
+    
+  optimization_matrix:
+    type: scatter_plot
+    axes:
+      x: implementation_effort
+      y: expected_impact
+    quadrants:
+      - quick_wins
+      - strategic_initiatives
+      - low_priority
+      - resource_intensive
+    
+  award_probability:
+    type: gauge_chart
+    shows:
+      - name: Cannes Lions
+        threshold: 75
+      - name: Effie Awards
+        threshold: 70
+      - name: AOY Awards
+        threshold: 65
+    
+  benchmark_comparison:
+    type: bar_chart
+    categories:
+      - industry_average
+      - top_performers
+      - campaign_score
+    metrics:
+      - effectiveness_score
+      - predicted_roi
+      - engagement_rate
+
+visualization_config:
+  theme:
+    primary_color: "#FF5E5B"
+    secondary_color: "#FFED65"
+    background: "#FFFFFF"
+    font_family: "Inter, system-ui"
+    
+  interactivity:
+    tooltips: true
+    drill_down: true
+    export_enabled: true
+    real_time_updates: true
+    
+  responsive:
+    breakpoints:
+      mobile: 480
+      tablet: 768
+      desktop: 1024
+    
+export_options:
+  pdf:
+    format: A4
+    orientation: landscape
+    include_appendix: true
+    
+  pptx:
+    template: corporate
+    slides:
+      - executive_summary
+      - effectiveness_analysis
+      - performance_forecast
+      - recommendations
+      - appendix
+    
+  xlsx:
+    sheets:
+      - raw_data
+      - calculations
+      - charts
+      - recommendations
+
+performance:
+  cache_duration: 300
+  max_concurrent_users: 100
+  data_refresh_interval: 60
+  chart_render_timeout: 5000
+
+integrations:
+  - plotly: ">=5.0.0"
+  - dash: ">=2.0.0"
+  - pandas: ">=1.3.0"
+  - redis: ">=4.0.0"
+
+monitoring:
+  metrics:
+    - dashboard_load_time
+    - user_engagement
+    - export_success_rate
+  alerts:
+    - metric: dashboard_load_time
+      threshold: 3000  # ms
+    - metric: export_success_rate
+      threshold: 0.95

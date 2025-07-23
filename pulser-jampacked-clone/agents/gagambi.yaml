@@ -1,0 +1,230 @@
+name: gagambi
+version: "1.0.0"
+description: Vector search and similarity engine for creative assets
+category: retrieval
+status: production
+backend: chromadb
+
+capabilities:
+  - semantic_search
+  - similarity_matching
+  - creative_clustering
+  - trend_detection
+  - competitive_analysis
+
+actions:
+  fetch_similar_creatives:
+    description: Retrieve similar creative assets from vector database
+    inputs:
+      collection:
+        type: string
+        required: true
+        default: creative_vectors
+      query_embedding:
+        type: array
+        required: false
+      query_text:
+        type: string
+        required: false
+      top_k:
+        type: integer
+        default: 10
+      filters:
+        type: object
+        properties:
+          industry:
+            type: string
+          date_range:
+            type: object
+          award_winner:
+            type: boolean
+          brand:
+            type: string
+    outputs:
+      results:
+        type: array
+        items:
+          type: object
+          properties:
+            campaign_id:
+              type: string
+            similarity_score:
+              type: number
+            metadata:
+              type: object
+      
+  index_creative_asset:
+    description: Add new creative asset to vector database
+    inputs:
+      asset_data:
+        type: object
+        required: true
+        properties:
+          asset_url:
+            type: string
+          asset_type:
+            type: string
+          metadata:
+            type: object
+      embedding_model:
+        type: string
+        default: text-embedding-3-large
+    outputs:
+      asset_id:
+        type: string
+      embedding_id:
+        type: string
+      
+  cluster_campaigns:
+    description: Group similar campaigns using vector clustering
+    inputs:
+      collection:
+        type: string
+        default: creative_vectors
+      n_clusters:
+        type: integer
+        default: 10
+      clustering_method:
+        type: string
+        enum: [kmeans, dbscan, hierarchical]
+        default: kmeans
+    outputs:
+      clusters:
+        type: array
+        items:
+          type: object
+          properties:
+            cluster_id:
+              type: integer
+            campaign_ids:
+              type: array
+            centroid:
+              type: array
+            characteristics:
+              type: object
+              
+  detect_trends:
+    description: Identify emerging creative trends
+    inputs:
+      time_window:
+        type: string
+        enum: [week, month, quarter, year]
+        default: month
+      min_cluster_size:
+        type: integer
+        default: 5
+    outputs:
+      trends:
+        type: array
+        items:
+          type: object
+          properties:
+            trend_name:
+              type: string
+            growth_rate:
+              type: number
+            example_campaigns:
+              type: array
+            key_characteristics:
+              type: array
+
+vector_configuration:
+  embedding_models:
+    text:
+      model: text-embedding-3-large
+      dimensions: 1536
+    image:
+      model: clip-vit-base-patch32
+      dimensions: 512
+    multimodal:
+      model: openai-multimodal-v1
+      dimensions: 1024
+      
+  collections:
+    creative_vectors:
+      metadata_fields:
+        - campaign_id
+        - brand
+        - industry
+        - asset_type
+        - effectiveness_score
+        - award_status
+        - creation_date
+        - platform
+      indexes:
+        - field: industry
+          type: string
+        - field: effectiveness_score
+          type: float
+        - field: creation_date
+          type: date
+          
+  similarity_metrics:
+    default: cosine
+    available:
+      - cosine
+      - euclidean
+      - dot_product
+      
+  preprocessing:
+    text:
+      - lowercase
+      - remove_punctuation
+      - extract_keywords
+    image:
+      - resize: [224, 224]
+      - normalize
+      - extract_features
+
+performance_optimization:
+  index_type: hnsw
+  ef_construction: 200
+  m: 16
+  batch_size: 100
+  cache_similar_queries: true
+  cache_ttl: 3600
+
+data_pipeline:
+  ingestion:
+    supported_formats:
+      - json
+      - csv
+      - parquet
+    validation:
+      required_fields:
+        - asset_url
+        - asset_type
+        - brand
+    preprocessing:
+      - clean_metadata
+      - generate_embedding
+      - validate_embedding
+      
+  enrichment:
+    - extract_visual_features
+    - extract_text_elements
+    - detect_brand_elements
+    - analyze_composition
+
+integrations:
+  chromadb:
+    version: ">=0.4.0"
+    persistent: true
+    path: "/data/chromadb"
+  openai:
+    api_version: "2023-10-01"
+  redis:
+    cache_enabled: true
+    ttl: 3600
+
+monitoring:
+  metrics:
+    - query_latency
+    - index_size
+    - cache_hit_rate
+    - embedding_quality
+  alerts:
+    - metric: query_latency
+      threshold: 500  # ms
+    - metric: index_size
+      threshold: 1000000  # documents

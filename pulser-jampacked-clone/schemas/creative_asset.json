@@ -1,0 +1,196 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Creative Asset Schema",
+  "description": "Schema for creative assets in the JamPacked platform",
+  "type": "object",
+  "required": ["asset_type", "asset_url"],
+  "properties": {
+    "asset_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Unique identifier for the asset"
+    },
+    "asset_type": {
+      "type": "string",
+      "enum": ["video", "image", "audio", "text", "interactive"],
+      "description": "Type of creative asset"
+    },
+    "asset_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL or path to the asset"
+    },
+    "platform_specs": {
+      "type": "object",
+      "description": "Platform-specific specifications",
+      "properties": {
+        "platform": {
+          "type": "string",
+          "enum": ["facebook", "instagram", "youtube", "tiktok", "display", "twitter", "linkedin", "other"]
+        },
+        "format": {
+          "type": "string",
+          "examples": ["16:9", "9:16", "1:1", "4:5"]
+        },
+        "dimensions": {
+          "type": "object",
+          "properties": {
+            "width": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "height": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        },
+        "duration": {
+          "type": "number",
+          "description": "Duration in seconds for video/audio assets",
+          "minimum": 0
+        },
+        "file_size": {
+          "type": "number",
+          "description": "File size in MB",
+          "minimum": 0
+        }
+      }
+    },
+    "content_analysis": {
+      "type": "object",
+      "description": "Extracted content features",
+      "properties": {
+        "dominant_colors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Hex color codes of dominant colors"
+        },
+        "text_content": {
+          "type": "string",
+          "description": "Extracted text from the asset"
+        },
+        "has_faces": {
+          "type": "boolean",
+          "description": "Whether human faces are detected"
+        },
+        "has_text_overlay": {
+          "type": "boolean",
+          "description": "Whether text overlay is present"
+        },
+        "has_logo": {
+          "type": "boolean",
+          "description": "Whether brand logo is visible"
+        },
+        "has_cta": {
+          "type": "boolean",
+          "description": "Whether call-to-action is present"
+        },
+        "emotional_tone": {
+          "type": "string",
+          "enum": ["positive", "negative", "neutral", "inspirational", "humorous", "serious", "emotional"]
+        },
+        "visual_complexity": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Complexity score from 0 (simple) to 1 (complex)"
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Additional metadata",
+      "properties": {
+        "created_date": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "modified_date": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "creator": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "language": {
+          "type": "string",
+          "pattern": "^[a-z]{2}$"
+        },
+        "market": {
+          "type": "string"
+        },
+        "campaign_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "version": {
+          "type": "string"
+        },
+        "approval_status": {
+          "type": "string",
+          "enum": ["draft", "pending_review", "approved", "rejected"]
+        }
+      }
+    },
+    "performance_data": {
+      "type": "object",
+      "description": "Historical performance metrics",
+      "properties": {
+        "impressions": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "clicks": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "conversions": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "engagement_rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "view_through_rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "completion_rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "embedding": {
+      "type": "object",
+      "description": "Vector embedding information",
+      "properties": {
+        "model": {
+          "type": "string",
+          "description": "Embedding model used"
+        },
+        "dimensions": {
+          "type": "integer",
+          "description": "Number of dimensions"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    }
+  }
+}

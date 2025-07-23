@@ -1,0 +1,24 @@
+{
+  "extraction_timestamp": "20250711_131156",
+  "dataset_shape": [
+    1000,
+    135
+  ],
+  "numeric_features": 120,
+  "categorical_features": 14,
+  "target_variables": 6,
+  "file_locations": {
+    "csv": "output/comprehensive_extraction/comprehensive_creative_effectiveness_20250711_131156.csv",
+    "parquet": "output/comprehensive_extraction/comprehensive_creative_effectiveness_20250711_131156.parquet",
+    "json": "output/comprehensive_extraction/comprehensive_creative_effectiveness_20250711_131156.json",
+    "variable_definitions": "output/comprehensive_extraction/variable_definitions_20250711_131156.json",
+    "splits_directory": "output/comprehensive_extraction/splits"
+  },
+  "splits_created": [
+    "random",
+    "temporal",
+    "brand_holdout",
+    "region_holdout",
+    "stratified"
+  ]
+}

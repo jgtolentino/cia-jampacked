@@ -1,0 +1,161 @@
+{
+  "metadata": {
+    "extraction_date": "2025-07-11",
+    "merge_date": "2025-07-11T17:09:19.622649",
+    "source_files": [
+      "warc_comprehensive_json.json",
+      "complete_warc_json.json"
+    ],
+    "source_authority": "WARC Effective 100 (2021-2025) + WARC Awards for Effectiveness",
+    "feature_categories": [
+      "agency_credits",
+      "awards_recognition",
+      "basic_identification",
+      "business_challenge",
+      "campaign_strategy",
+      "creative_execution",
+      "cultural_social_elements",
+      "market_context",
+      "performance_metrics",
+      "technology_integration"
+    ],
+    "total_cases": 1,
+    "unique_campaigns": 1,
+    "brand_distribution": {
+      "Unknown": 1
+    },
+    "year_distribution": {
+      "Unknown": 1
+    },
+    "top_brands": [
+      [
+        "Unknown",
+        1
+      ]
+    ]
+  },
+  "case_studies": [
+    {
+      "case_id": "warc_001",
+      "warc_file_id": "149664_Decathlon_The_Breakaway_The_firs.pdf",
+      "campaign_identification": {
+        "campaign_name": "The Breakaway: The first eCycling team for prisoners",
+        "brand": "Decathlon",
+        "parent_company": "Decathlon SA",
+        "publication_year": 2023,
+        "warc_source": "WARC Effective 100",
+        "industry_sector": "Sports/Retail",
+        "sub_category": "Sports Equipment & Apparel"
+      },
+      "market_context": {
+        "primary_market": "Belgium",
+        "market_type": "Developed",
+        "target_audience": "General public + cycling community",
+        "audience_demographics": {
+          "primary": "Adults interested in sports and social causes",
+          "secondary": "Cycling enthusiasts",
+          "tertiary": "Prison reform advocates"
+        }
+      },
+      "business_challenge": {
+        "primary_challenge": "Demonstrate how sport can change people's lives",
+        "market_situation": "Need to showcase transformative power of sport",
+        "competitive_context": "Sports brands competing on purpose-driven messaging"
+      },
+      "campaign_objectives": {
+        "primary_objective": "Show sport's transformative power for prisoners",
+        "secondary_objectives": [
+          "Raise awareness about prison rehabilitation",
+          "Generate positive brand associations",
+          "Create earned media attention"
+        ]
+      },
+      "strategy_execution": {
+        "core_strategy": "First eCycling team for prisoners via Zwift platform",
+        "innovation_factor": "First-of-kind prisoner eCycling team",
+        "execution_elements": [
+          "Six prisoners chosen to ride online with other cyclists",
+          "Launch film introduction",
+          "Live Facebook broadcast of race",
+          "Podcast showing prisoner transformation stories"
+        ]
+      },
+      "creative_elements": {
+        "content_types": [
+          "Video",
+          "Podcast",
+          "Live Stream"
+        ],
+        "emotional_appeal": "High - transformation stories",
+        "visual_style": "Documentary/Reality",
+        "messaging_tone": "Inspirational, authentic",
+        "brand_integration": "Moderate - focus on purpose over product"
+      },
+      "channels_media": {
+        "primary_channels": [
+          "Facebook Live",
+          "Podcast",
+          "Launch Film"
+        ],
+        "media_mix": "Digital-first with earned media amplification",
+        "paid_owned_earned": {
+          "paid": "Low",
+          "owned": "Medium",
+          "earned": "High"
+        }
+      },
+      "technology_integration": {
+        "tech_enabled": true,
+        "platforms_used": [
+          "Zwift platform"
+        ],
+        "innovation_level": "High - virtual cycling integration",
+        "digital_sophistication": "Medium-High"
+      },
+      "csr_purpose_elements": {
+        "csr_integrated": true,
+        "csr_themes": [
+          "Social rehabilitation",
+          "Prison reform",
+          "Sports inclusion"
+        ],
+        "authenticity_level": "High",
+        "purpose_prominence": "Primary campaign driver"
+      },
+      "performance_metrics": {
+        "reach_metrics": {
+          "total_reach": "15+ million people",
+          "earned_media_value": "€1.3 million"
+        },
+        "engagement_metrics": {
+          "social_engagement": "High",
+          "media_mentions": "Significant"
+        },
+        "business_impact": {
+          "brand_awareness_lift": "Not specified",
+          "sales_impact": "Not specified",
+          "roi_reported": "Not specified"
+        }
+      },
+      "awards_recognition": {
+        "warc_effective_100": true,
+        "other_awards": "Not specified",
+        "industry_recognition": "Yes - featured in WARC"
+      },
+      "agency_credits": {
+        "creative_agency": "BBDO Brussels",
+        "media_agency": "Semetis Brussels",
+        "key_personnel": [
+          "Jan Dejonghe - Creative Director",
+          "Debby De Ridder - Copywriter",
+          "Frederik Clarysse, Tom Jacobs - Creative"
+        ]
+      },
+      "cultural_relevance": {
+        "cultural_context": "High - prison rehabilitation",
+        "local_adaptation": "Medium",
+        "global_scalability": "High"
+      }
+    }
+  ]
+}

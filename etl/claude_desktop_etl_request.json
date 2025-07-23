@@ -1,0 +1,77 @@
+{
+  "task": "google_drive_full_etl",
+  "description": "Extract all campaign data from Google Drive folder and apply comprehensive feature engineering",
+  "folder_id": "0AJMhu01UUQKoUk9PVA",
+  "timestamp": "2025-07-11T13:19:26.230454",
+  "steps": [
+    {
+      "step": 1,
+      "action": "authenticate",
+      "description": "Authenticate with Google Drive API using available credentials"
+    },
+    {
+      "step": 2,
+      "action": "list_files",
+      "description": "Recursively list all files in the folder",
+      "parameters": {
+        "folder_id": "0AJMhu01UUQKoUk9PVA",
+        "recursive": true,
+        "include_metadata": true
+      }
+    },
+    {
+      "step": 3,
+      "action": "download_data_files",
+      "description": "Download all CSV, Excel, and Google Sheets files",
+      "parameters": {
+        "file_types": [
+          "csv",
+          "xlsx",
+          "xls",
+          "google-sheets"
+        ],
+        "export_google_sheets_as": "csv"
+      }
+    },
+    {
+      "step": 4,
+      "action": "extract_features",
+      "description": "Extract 80+ comprehensive features from campaign data",
+      "feature_categories": [
+        "visual_features",
+        "text_features",
+        "audio_features",
+        "campaign_features",
+        "cultural_features",
+        "temporal_features",
+        "network_features",
+        "hierarchical_features",
+        "survival_features",
+        "performance_metrics"
+      ]
+    },
+    {
+      "step": 5,
+      "action": "save_results",
+      "description": "Save processed data in multiple formats",
+      "outputs": {
+        "formats": [
+          "csv",
+          "parquet",
+          "json"
+        ],
+        "include_raw_data": true,
+        "include_feature_engineered_data": true,
+        "include_summary_report": true
+      }
+    }
+  ],
+  "expected_outputs": {
+    "raw_campaigns_csv": "gdrive_raw_campaigns_TIMESTAMP.csv",
+    "campaign_features_csv": "gdrive_campaign_features_TIMESTAMP.csv",
+    "campaign_features_parquet": "gdrive_campaign_features_TIMESTAMP.parquet",
+    "campaign_features_json": "gdrive_campaign_features_TIMESTAMP.json",
+    "etl_summary_json": "etl_summary_TIMESTAMP.json"
+  },
+  "claude_desktop_instructions": "\nTo execute this ETL in Claude Desktop:\n\n1. Ensure you have Google Drive API access configured\n2. Use the MCP Google Drive server if available\n3. Run the following Python script with proper authentication:\n   python etl/google_drive_full_etl.py 0AJMhu01UUQKoUk9PVA\n   \n4. The script will:\n   - Authenticate with Google Drive\n   - Download all campaign data files\n   - Extract 80+ features per campaign\n   - Save results in multiple formats\n   \n5. Check the output/gdrive_etl directory for results\n"
+}
