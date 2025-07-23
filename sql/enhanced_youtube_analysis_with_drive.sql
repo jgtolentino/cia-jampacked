@@ -1,6 +1,6 @@
 -- sql/enhanced_youtube_analysis_with_drive.sql
 -- Enhanced Claude Desktop SQL Trigger for YouTube + Google Drive Analysis
--- Combines video analysis with campaign intelligence from TBWA Drive folder
+-- Combines video analysis with campaign intelligence from Pulser Drive folder
 
 -- Example usage from Claude Desktop:
 -- sqlite3 data/database.sqlite < sql/enhanced_youtube_analysis_with_drive.sql

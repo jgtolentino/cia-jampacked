@@ -213,7 +213,7 @@ JamPacked's autonomous intelligence integrates seamlessly with:
 
 ## 📄 License
 
-Proprietary - TBWA\SMP © 2024. Patent Pending.
+Proprietary - Pulser\SMP © 2024. Patent Pending.
 
 ---
 

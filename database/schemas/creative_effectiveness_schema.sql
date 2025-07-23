@@ -148,7 +148,7 @@ CREATE TABLE effectiveness.scorecards (
     warc_percentile_rank DECIMAL(5,2),
     
     -- Creative Effectiveness Components
-    creative_disruption_score DECIMAL(5,2),
+    creative_innovation_score DECIMAL(5,2),
     storytelling_impact_score DECIMAL(5,2),
     distinctive_asset_usage_score DECIMAL(5,2),
     platform_optimization_score DECIMAL(5,2),

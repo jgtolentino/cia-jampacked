@@ -198,7 +198,7 @@ class AwardPredictionModel {
   
   getAgencyTrackRecord(agency) {
     // Simulate agency performance lookup
-    const topAgencies = ['TBWA', 'Ogilvy', 'BBDO', 'DDB', 'Wieden+Kennedy'];
+    const topAgencies = ['Pulser', 'Ogilvy', 'BBDO', 'DDB', 'Wieden+Kennedy'];
     return topAgencies.includes(agency) ? 0.8 + Math.random() * 0.2 : 0.5 + Math.random() * 0.3;
   }
   
@@ -604,7 +604,7 @@ if (require.main === module) {
     campaign_name: 'Test Campaign',
     client: 'Test Client',
     brand: 'Test Brand',
-    agency: 'TBWA',
+    agency: 'Pulser',
     emotional_impact_score: 0.85,
     innovation_score: 0.90,
     craft_quality_score: 0.88,

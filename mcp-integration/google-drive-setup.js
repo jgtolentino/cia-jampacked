@@ -3,7 +3,7 @@ const fs = require('fs').promises;
 const path = require('path');
 
 /**
- * Google Drive API Setup for TBWA Awards Database
+ * Google Drive API Setup for Pulser Awards Database
  * Folder ID: 0AJMhu01UUQKoUk9PVA
  * 
  * NOTE: This module is deprecated in favor of Claude Desktop integration
@@ -15,7 +15,7 @@ class GoogleDriveIntegration {
   constructor() {
     this.drive = null;
     this.auth = null;
-    this.TBWA_AWARDS_FOLDER_ID = '0AJMhu01UUQKoUk9PVA';
+    this.Pulser_AWARDS_FOLDER_ID = '0AJMhu01UUQKoUk9PVA';
   }
 
   /**
@@ -82,7 +82,7 @@ class GoogleDriveIntegration {
   }
 
   /**
-   * List all files in TBWA awards folder
+   * List all files in Pulser awards folder
    */
   async listAwardsFiles() {
     if (!this.drive) {
@@ -91,13 +91,13 @@ class GoogleDriveIntegration {
 
     try {
       const response = await this.drive.files.list({
-        q: `'${this.TBWA_AWARDS_FOLDER_ID}' in parents and trashed = false`,
+        q: `'${this.Pulser_AWARDS_FOLDER_ID}' in parents and trashed = false`,
         fields: 'nextPageToken, files(id, name, mimeType, modifiedTime, size)',
         pageSize: 1000
       });
 
       const files = response.data.files;
-      console.log(`📁 Found ${files.length} files in TBWA awards folder`);
+      console.log(`📁 Found ${files.length} files in Pulser awards folder`);
       
       return files;
     } catch (error) {
@@ -291,7 +291,7 @@ async function createServiceAccountInstructions() {
    - Go to "Keys" tab
    - Add Key > Create New Key > JSON
    - Save as "service-account-key.json" in this directory
-6. Share TBWA awards folder with service account email
+6. Share Pulser awards folder with service account email
    - Get email from service account (ends with @*.iam.gserviceaccount.com)
    - Share folder with this email as "Viewer"
 

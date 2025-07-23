@@ -9,7 +9,7 @@ class ClaudeDesktopDriveExtractor {
   constructor(dbPath) {
     this.dbPath = dbPath || '/Users/tbwa/Documents/GitHub/mcp-sqlite-server/data/database.sqlite';
     this.db = null;
-    this.TBWA_AWARDS_FOLDER_ID = '0AJMhu01UUQKoUk9PVA';
+    this.Pulser_AWARDS_FOLDER_ID = '0AJMhu01UUQKoUk9PVA';
   }
 
   /**
@@ -28,9 +28,9 @@ class ClaudeDesktopDriveExtractor {
     
     const payload = {
       task_type: 'google_drive_extraction',
-      folder_id: this.TBWA_AWARDS_FOLDER_ID,
-      instructions: `Please extract award data from the TBWA awards folder:
-        1. Access Google Drive folder ID: ${this.TBWA_AWARDS_FOLDER_ID}
+      folder_id: this.Pulser_AWARDS_FOLDER_ID,
+      instructions: `Please extract award data from the Pulser awards folder:
+        1. Access Google Drive folder ID: ${this.Pulser_AWARDS_FOLDER_ID}
         2. List all files in the folder
         3. For each spreadsheet file:
            - Read the data
@@ -170,7 +170,7 @@ class ClaudeDesktopDriveExtractor {
           award.campaign_name,
           award.client,
           award.brand,
-          award.agency || 'TBWA',
+          award.agency || 'Pulser',
           award.country || ''
         ]);
 
@@ -234,7 +234,7 @@ class ClaudeDesktopDriveExtractor {
   createExtractionSQL() {
     return `
       -- Claude Desktop: Please execute this Google Drive extraction
-      -- 1. Access the TBWA awards folder (ID: ${this.TBWA_AWARDS_FOLDER_ID})
+      -- 1. Access the Pulser awards folder (ID: ${this.Pulser_AWARDS_FOLDER_ID})
       -- 2. Extract award data from spreadsheets
       -- 3. Insert results into campaign_awards table
       
@@ -252,7 +252,7 @@ class ClaudeDesktopDriveExtractor {
        'Campaign Name Here',
        'Client Name',
        'Brand Name',
-       'TBWA',
+       'Pulser',
        'USA');
     `;
   }
@@ -298,7 +298,7 @@ class ClaudeDesktopDriveExtractor {
  */
 function createClaudeDesktopExtractionRequest() {
   return {
-    message: `Please help extract TBWA awards data from Google Drive:
+    message: `Please help extract Pulser awards data from Google Drive:
 
 1. Access folder: https://drive.google.com/drive/folders/0AJMhu01UUQKoUk9PVA
 2. Look for spreadsheets containing award data (Cannes, D&AD, One Show, etc.)
@@ -319,7 +319,7 @@ INSERT INTO campaign_awards
 (award_id, campaign_id, award_show, award_year, award_category, 
  award_level, award_title, client, brand, agency, country)
 VALUES 
-(?, ?, ?, ?, ?, ?, ?, ?, ?, 'TBWA', ?);`
+(?, ?, ?, ?, ?, ?, ?, ?, ?, 'Pulser', ?);`
   };
 }
 

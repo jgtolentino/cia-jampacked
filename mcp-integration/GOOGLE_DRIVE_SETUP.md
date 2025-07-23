@@ -13,7 +13,7 @@
    - Go to "Keys" tab
    - Add Key > Create New Key > JSON
    - Save as "service-account-key.json" in this directory
-6. Share TBWA awards folder with service account email
+6. Share Pulser awards folder with service account email
    - Get email from service account (ends with @*.iam.gserviceaccount.com)
    - Share folder with this email as "Viewer"
 

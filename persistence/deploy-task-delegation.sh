@@ -86,7 +86,7 @@ echo "✅ Bruno executor created"
 
 # Step 3: Create LaunchAgent for Pulser task runner
 echo "🎯 Creating Pulser CLI LaunchAgent..."
-PLIST_PATH="$HOME/Library/LaunchAgents/com.tbwa.pulser.taskrunner.plist"
+PLIST_PATH="$HOME/Library/LaunchAgents/com.pulser.pulser.taskrunner.plist"
 
 cat > "$PLIST_PATH" << EOF
 <?xml version="1.0" encoding="UTF-8"?>
@@ -94,7 +94,7 @@ cat > "$PLIST_PATH" << EOF
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>com.tbwa.pulser.taskrunner</string>
+    <string>com.pulser.pulser.taskrunner</string>
     <key>ProgramArguments</key>
     <array>
         <string>/bin/bash</string>

@@ -15,7 +15,7 @@ npm install
 
 # Step 2: Create LaunchAgent for monitoring server
 echo "🔧 Creating LaunchAgent..."
-PLIST_PATH="$HOME/Library/LaunchAgents/com.tbwa.agent.monitor.plist"
+PLIST_PATH="$HOME/Library/LaunchAgents/com.pulser.agent.monitor.plist"
 
 cat > "$PLIST_PATH" << EOF
 <?xml version="1.0" encoding="UTF-8"?>
@@ -23,7 +23,7 @@ cat > "$PLIST_PATH" << EOF
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>com.tbwa.agent.monitor</string>
+    <string>com.pulser.agent.monitor</string>
     <key>ProgramArguments</key>
     <array>
         <string>/usr/local/bin/node</string>

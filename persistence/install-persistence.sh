@@ -26,7 +26,7 @@ install_launch_agent() {
     echo "Installing $plist_name..."
     
     # Update paths in plist if needed
-    if [[ "$plist_name" == "com.tbwa.mcp.sqlite.plist" ]]; then
+    if [[ "$plist_name" == "com.pulser.mcp.sqlite.plist" ]]; then
         # Check for node path
         NODE_PATH=$(which node)
         if [ -z "$NODE_PATH" ]; then
@@ -62,8 +62,8 @@ echo ""
 echo "Installing LaunchAgents..."
 mkdir -p "$LAUNCHAGENTS_DIR"
 
-install_launch_agent "com.tbwa.mcp.sqlite.plist"
-install_launch_agent "com.tbwa.jampacked.services.plist"
+install_launch_agent "com.pulser.mcp.sqlite.plist"
+install_launch_agent "com.pulser.jampacked.services.plist"
 
 # 4. Set up cron job for task sync
 echo ""
@@ -95,13 +95,13 @@ echo "📊 Installation Status:"
 echo "====================="
 
 # Check if services are running
-if launchctl list | grep -q "com.tbwa.mcp.sqlite"; then
+if launchctl list | grep -q "com.pulser.mcp.sqlite"; then
     echo -e "${GREEN}✅ MCP SQLite Server: Running${NC}"
 else
     echo -e "${YELLOW}⚠️  MCP SQLite Server: Not running${NC}"
 fi
 
-if launchctl list | grep -q "com.tbwa.jampacked.services"; then
+if launchctl list | grep -q "com.pulser.jampacked.services"; then
     echo -e "${GREEN}✅ JamPacked Services: Running${NC}"
 else
     echo -e "${YELLOW}⚠️  JamPacked Services: Not running${NC}"
@@ -123,11 +123,11 @@ echo "============="
 echo "1. Claude Desktop: Extension should auto-connect to MCP"
 echo "2. Claude Code: Use 'claude code --config ~/.mcp.yaml'"
 echo "3. Monitor logs: tail -f ~/Library/Logs/jampacked-*.log"
-echo "4. Check status: launchctl list | grep tbwa"
+echo "4. Check status: launchctl list | grep pulser"
 echo ""
 echo "✅ Persistence setup complete!"
 echo ""
 echo "To uninstall:"
-echo "  launchctl unload ~/Library/LaunchAgents/com.tbwa.*.plist"
-echo "  rm ~/Library/LaunchAgents/com.tbwa.*.plist"
+echo "  launchctl unload ~/Library/LaunchAgents/com.pulser.*.plist"
+echo "  rm ~/Library/LaunchAgents/com.pulser.*.plist"
 echo "  crontab -l | grep -v sync_agent_tasks | crontab -"

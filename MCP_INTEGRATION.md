@@ -1,8 +1,8 @@
-# JamPacked Integration with Existing MCP SQLite Server
+# CES JamPacked Agentic - MCP Integration Guide
 
-## 🔗 Seamless Integration - No Duplicate Infrastructure
+## 🔗 Seamless Integration with Model Context Protocol
 
-JamPacked integrates directly with your existing MCP SQLite server at:
+CES JamPacked Agentic integrates directly with your existing MCP SQLite server for AI-powered advertising optimization:
 - **Database Path**: `/Users/tbwa/Documents/GitHub/mcp-sqlite-server/data/database.sqlite`
 - **MCP Server**: `/Users/tbwa/Documents/GitHub/mcp-sqlite-server/dist/index.js`
 

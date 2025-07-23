@@ -7,8 +7,8 @@ This bundle ensures Claude Desktop and Claude Code permanently remember your MCP
 | File | Purpose |
 |------|---------|
 | `.mcp.yaml` | Master configuration for Claude Code |
-| `com.tbwa.mcp.sqlite.plist` | Auto-start MCP SQLite server on login |
-| `com.tbwa.jampacked.services.plist` | Auto-start JamPacked services |
+| `com.pulser.mcp.sqlite.plist` | Auto-start MCP SQLite server on login |
+| `com.pulser.jampacked.services.plist` | Auto-start JamPacked services |
 | `start_services.sh` | Service startup script |
 | `sync_agent_tasks.sh` | Task queue monitoring |
 | `claude-desktop-settings.json` | Claude Desktop configuration |
@@ -51,8 +51,8 @@ chmod +x install-persistence.sh
 
 ### Check Service Status
 ```bash
-# View all TBWA services
-launchctl list | grep tbwa
+# View all Pulser services
+launchctl list | grep pulser
 
 # Check logs
 tail -f ~/Library/Logs/jampacked-*.log
@@ -79,8 +79,8 @@ cat ~/Library/Logs/mcp-sqlite-server.error.log
 cat ~/Library/Logs/jampacked-services.error.log
 
 # Restart service
-launchctl unload ~/Library/LaunchAgents/com.tbwa.mcp.sqlite.plist
-launchctl load ~/Library/LaunchAgents/com.tbwa.mcp.sqlite.plist
+launchctl unload ~/Library/LaunchAgents/com.pulser.mcp.sqlite.plist
+launchctl load ~/Library/LaunchAgents/com.pulser.mcp.sqlite.plist
 ```
 
 ### Database Connection Issues
@@ -119,10 +119,10 @@ Force a task sync:
 Remove all persistence:
 ```bash
 # Stop services
-launchctl unload ~/Library/LaunchAgents/com.tbwa.*.plist
+launchctl unload ~/Library/LaunchAgents/com.pulser.*.plist
 
 # Remove launch agents
-rm ~/Library/LaunchAgents/com.tbwa.*.plist
+rm ~/Library/LaunchAgents/com.pulser.*.plist
 
 # Remove cron job
 crontab -l | grep -v sync_agent_tasks | crontab -

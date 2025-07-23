@@ -23,7 +23,7 @@ JamPacked Creative Intelligence can be deployed using Docker Compose for single-
 
 ```bash
 # Clone the repository
-git clone https://github.com/tbwa/jampacked-creative-intelligence.git
+git clone https://github.com/pulser/jampacked-creative-intelligence.git
 cd jampacked-creative-intelligence
 
 # Run deployment script

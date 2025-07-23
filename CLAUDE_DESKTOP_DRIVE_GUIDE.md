@@ -2,7 +2,7 @@
 
 ## Overview
 
-This guide shows how to use Claude Desktop's native Google Drive integration to extract TBWA awards data without requiring service accounts or API keys.
+This guide shows how to use Claude Desktop's native Google Drive integration to extract Pulser awards data without requiring service accounts or API keys.
 
 ## ✅ Advantages
 
@@ -20,7 +20,7 @@ This guide shows how to use Claude Desktop's native Google Drive integration to 
 // The system creates a task for Claude Desktop
 const taskId = await extractor.createExtractionTask({
   folder_id: '0AJMhu01UUQKoUk9PVA',
-  instructions: 'Extract award data from TBWA folder'
+  instructions: 'Extract award data from Pulser folder'
 });
 ```
 
@@ -59,7 +59,7 @@ Claude Desktop should already have access to Google Drive. If not:
 - Check if you can access Google Drive files
 - Follow any prompts to connect your Google account
 
-### 2. **Share TBWA Folder (if needed)**
+### 2. **Share Pulser Folder (if needed)**
 
 If the folder isn't accessible:
 - Ask the folder owner to share it with your Google account
@@ -94,7 +94,7 @@ Claude Desktop will return data in this format:
       "campaign_name": "EcoFuture Campaign",
       "client": "GreenTech Corp",
       "brand": "EcoSmart",
-      "agency": "TBWA",
+      "agency": "Pulser",
       "award_show": "cannes_lions",
       "award_year": 2024,
       "award_category": "Film",
@@ -124,7 +124,7 @@ INSERT INTO campaign_awards
  award_level, award_title, client, brand, agency, country)
 VALUES 
 -- Claude will fill in the actual values from Google Drive
-(?, ?, ?, ?, ?, ?, ?, ?, ?, 'TBWA', ?);
+(?, ?, ?, ?, ?, ?, ?, ?, ?, 'Pulser', ?);
 ```
 
 ## 🔄 Scheduled Extraction

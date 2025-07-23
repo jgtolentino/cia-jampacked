@@ -1,7 +1,7 @@
 # agents/jampacked/handlers/enhanced_youtube_analysis.py
 """
 Enhanced YouTube Analysis with Google Drive Campaign Intelligence
-Combines video analysis with campaign context from TBWA Drive folder
+Combines video analysis with campaign context from Pulser Drive folder
 """
 
 import sqlite3

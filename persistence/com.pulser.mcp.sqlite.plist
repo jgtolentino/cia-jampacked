@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>com.tbwa.mcp.sqlite</string>
+    <string>com.pulser.mcp.sqlite</string>
     
     <key>ProgramArguments</key>
     <array>

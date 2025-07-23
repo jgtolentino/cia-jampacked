@@ -253,7 +253,7 @@ security:
 
 integrations:
   client_platforms:
-    tbwa_smp:
+    pulser_smp:
       clients:
         - dito_telecom
         - mcdonalds_philippines

@@ -209,7 +209,7 @@ interactions = {
 ```python
 # Time-varying predictors
 time_varying = {
-    'Disruption_it': self.calculate_novelty_decay(creative, time_since_launch),
+    'Innovation_it': self.calculate_novelty_decay(creative, time_since_launch),
     'Storytelling_it': self.measure_narrative_engagement(creative),  # Constant
     'Cultural_Relevance_it': self.track_cultural_alignment(creative, current_trends),
     'Performance_Predictors_it': self.aggregate_historical_patterns(similar_creatives, t),

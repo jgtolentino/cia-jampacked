@@ -5,7 +5,7 @@
 # Absolute paths
 DB="$HOME/Documents/GitHub/mcp-sqlite-server/data/database.sqlite"
 JAMPACKED_HOME="$HOME/Documents/GitHub/jampacked-creative-intelligence"
-LIONS_FORGE_HOME="$HOME/Documents/GitHub/tbwa-lions-palette-forge"
+LIONS_FORGE_HOME="$HOME/Documents/GitHub/pulser-lions-palette-forge"
 
 echo "[Bruno] Starting secure executor..."
 echo "[Bruno] Database: $DB"

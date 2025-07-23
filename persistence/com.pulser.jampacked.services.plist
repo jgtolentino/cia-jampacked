@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>com.tbwa.jampacked.services</string>
+    <string>com.pulser.jampacked.services</string>
     
     <key>ProgramArguments</key>
     <array>
